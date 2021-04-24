@@ -1,23 +1,50 @@
 .menu-theme {
-  color: #b8b4b4;
-  /*background: #525252*/;
-  /*background: url("https://i.imgur.com/MJAkxbh.png")*/
-  /*margin-top: 170px;*/
+  background-color: transparent
 }
 
 .main-theme {
   color: #000000;
-  /*background: url("https://i.imgur.com/MJAkxbh.png");*/
   white-space: normal;
+  background-color: transparent
 }
 
-.list-div {
-    padding: 25px;
-}
+.menu {float:left;
+  width:20%;
+  height: 100%;
+  text-align:center;
+  overflow:auto;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 20px;}
+
+.menu h1 {text-align: center; color: black;}
+.menu h1 {text-align: center;}
+.menu ul {text-align: center;}
+.menu li {margin-right:42px;}
+.menu a {color: black; background-color: transparent; text-decoration: none;}
+.menu a:hover {color: purple;}
+
+.bottom {position: absolute; bottom: 0; left: 0; color: black;}
+  
+.content {color: #000000; padding: 20px; margin-top: 50px; white-space: normal; overflow:auto}
+.content a {color: blue; background-color: transparent; text-decoration: none;}
+.content a:hover {color: purple}
+
+.main {float:left; width:50%; overflow:auto; margin-left:20%}
+.main a {color: blue; background-color: transparent; text-decoration: none;}
+.main a:hover {color: purple}
+
+.bar {float:left; width:30%; text-align:center; min-height:400px;}
+
+.list-div {padding: 25px;}
 
 .image-cropper {
-  width: 200px;
-  height: 200px;
+  width: 12em;
+  height: 12em;
   position: center;
   overflow: hidden;
   border-radius: 50%;
@@ -27,11 +54,9 @@
   margin:0 auto;
 }
 
-img {
+.img {
   display: inline;
-  margin: auto;
-  height: 100%;
-  width: auto;
+  margin:0 auto;
 }
 
 #rectangle{
@@ -51,39 +76,16 @@ img {
   top: 0;
 }
 
-.content {
-  padding: 20px;
-  margin-top: 50px;
-  width: 900px;
-  white-space: normal;
-}
-
 .sticky {
   position: fixed;
   top: 0;
   width: 100%
 }
 
-a:link {
-  color: black;/*#ff7b00;*/
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: purple;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:active {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
+.container {
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
