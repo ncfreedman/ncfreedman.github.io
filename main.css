@@ -2,7 +2,7 @@
   color: #b8b4b4;
   /*background: #525252*/;
   /*background: url("https://i.imgur.com/MJAkxbh.png")*/
-  margin-top: 200px;
+  margin-top: 170px;
 }
 
 .main-theme {
@@ -16,15 +16,15 @@
 }
 
 .image-cropper {
-  width: 182px;
-  height: 182px;
+  width: 200px;
+  height: 200px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
   border-style: solid;
   border-color: black;
   text-align: center;
-  margin-left: 148px;
+  margin-left: 139px;
 }
 
 img {
@@ -54,8 +54,8 @@ img {
 
 .content {
   padding: 20px;
-  margin-top: 150px;
-  width: 1000px;
+  margin-top: 50px;
+  width: 900px;
   white-space: normal;
 }
 
