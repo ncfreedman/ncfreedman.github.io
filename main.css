@@ -18,19 +18,18 @@
 .image-cropper {
   width: 200px;
   height: 200px;
-  position: relative;
+  position: center;
   overflow: hidden;
   border-radius: 50%;
   border-style: solid;
   border-color: black;
   text-align: center;
-  margin-left: 139px;
+  margin:0 auto;
 }
 
 img {
-  text-align: center;
   display: inline;
-  margin: 0 auto;
+  margin: auto;
   height: 100%;
   width: auto;
 }
