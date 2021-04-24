@@ -1,10 +1,11 @@
-.light-theme {
+.menu-theme {
   color: #b8b4b4;
-   background: #525252;
+  /*background: #525252*/;
   /*background: url("https://i.imgur.com/MJAkxbh.png")*/
+  margin-top: 200px;
 }
 
-.pattern-theme {
+.main-theme {
   color: #000000;
   /*background: url("https://i.imgur.com/MJAkxbh.png");*/
   white-space: normal;
@@ -20,9 +21,14 @@
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  margin-left: 148px;
 }
 
 img {
+  text-align: center;
   display: inline;
   margin: 0 auto;
   height: 100%;
@@ -30,8 +36,8 @@ img {
 }
 
 #rectangle{
-  width: calc(100% - 329px);
-  height:118px;
+  width: calc(100% - 344px);
+  height:149px;
   background:#FFFFFF;
   position: fixed;
   top: 0;
@@ -39,6 +45,7 @@ img {
 }
 
 .header {
+  padding: 16px;
   background: #FFFFFF;
   color: #000000;
   position: fixed;
@@ -46,8 +53,10 @@ img {
 }
 
 .content {
-  padding: 16px;
-  margin-top: 100px
+  padding: 20px;
+  margin-top: 150px;
+  width: 1000px;
+  white-space: normal;
 }
 
 .sticky {
@@ -56,28 +65,26 @@ img {
   width: 100%
 }
 
-<style>
 a:link {
-  color: #ff7b00;
+  color: black;/*#ff7b00;*/
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: #ff7b00;
+  color: black;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: white;
+  color: purple;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:active {
-  color: #ff7b00;
+  color: black;
   background-color: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
-</style>
