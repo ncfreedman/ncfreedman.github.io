@@ -1,0 +1,83 @@
+.light-theme {
+  color: #b8b4b4;
+   background: #525252;
+  /*background: url("https://i.imgur.com/MJAkxbh.png")*/
+}
+
+.pattern-theme {
+  color: #000000;
+  /*background: url("https://i.imgur.com/MJAkxbh.png");*/
+  white-space: normal;
+}
+
+.list-div {
+    padding: 25px;
+}
+
+.image-cropper {
+  width: 182px;
+  height: 182px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+#rectangle{
+  width: calc(100% - 329px);
+  height:118px;
+  background:#FFFFFF;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.header {
+  background: #FFFFFF;
+  color: #000000;
+  position: fixed;
+  top: 0;
+}
+
+.content {
+  padding: 16px;
+  margin-top: 100px
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+<style>
+a:link {
+  color: #ff7b00;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ff7b00;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ff7b00;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
