@@ -2,25 +2,20 @@
   background-color: transparent
 }
 
-.main-theme {
-  color: #000000;
-  white-space: normal;
-  background-color: transparent
-}
-
 .menu {float:left;
   width:20%;
   height: 100%;
   text-align:center;
   overflow:auto;
+  overflow-wrap: break-word;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-top: 20px;}
-
+  padding-top: 1vw;
+  font-size: 1.5vw;}
 .menu h1 {text-align: center; color: black;}
 .menu h1 {text-align: center;}
 .menu ul {text-align: center;}
@@ -28,19 +23,8 @@
 .menu a {color: black; background-color: transparent; text-decoration: none;}
 .menu a:hover {color: purple;}
 
-.bottom {position: absolute; bottom: 0; left: 0; color: black;}
-  
-.content {color: #000000; padding: 20px; margin-top: 50px; white-space: normal; overflow:auto}
-.content a {color: blue; background-color: transparent; text-decoration: none;}
-.content a:hover {color: purple}
-
-.main {float:left; width:50%; overflow:auto; margin-left:20%}
-.main a {color: blue; background-color: transparent; text-decoration: none;}
-.main a:hover {color: purple}
-
-.bar {float:left; width:30%; text-align:center; min-height:400px;}
-
-.list-div {padding: 25px;}
+.menu_mail {font-size: 1.2vw}
+.menu_links {font-size: 2.3vw}
 
 .image-cropper {
   width: 12em;
@@ -52,40 +36,28 @@
   border-color: black;
   text-align: center;
   margin:0 auto;
-}
+  font-size: 1vw;}
 
 .img {
   display: inline;
   margin:0 auto;
 }
+  
+.content {color: #000000; padding: 1vw; margin-top: 13vw; white-space: normal; overflow:auto; font-size:2.5vw}
+.content a {color: blue; background-color: transparent; text-decoration: none;}
+.content a:hover {color: purple}
+.content-title {font-size:3vw}
 
-#rectangle{
-  width: calc(100% - 344px);
-  height:149px;
-  background:#FFFFFF;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-.header {
-  padding: 16px;
-  background: #FFFFFF;
+.main-theme {
   color: #000000;
-  position: fixed;
-  top: 0;
+  white-space: normal;
+  background-color: transparent
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
+.main {float:left; width:50%; overflow:auto; margin-left:20%}
+.main a {color: blue; background-color: transparent; text-decoration: none;}
+.main a:hover {color: purple}
 
-.container {
-  padding: 20px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+.bar {float:left; width:30%; text-align:center; min-height:400px;}
+
+.list {padding: 1vw;}
