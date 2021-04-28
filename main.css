@@ -1,21 +1,8 @@
-.menu-theme {
-  background-color: transparent
-}
+.menu-theme {background-color: transparent}
 
-.menu {float:left;
-  width:20%;
-  height: 100%;
-  text-align:center;
-  overflow:auto;
-  overflow-wrap: break-word;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding-top: 1vw;
-  font-size: 1.5vw;}
+.menu {float:left; font-size: 1.5vw; width:20%; height: 100%; text-align:center;
+  overflow:auto; overflow-wrap: break-word; overflow-x: hidden; overflow-y: hidden;
+  position: fixed; z-index: 1; top: 0; left: 0; padding-top: 1vw;}
 .menu h1 {text-align: center; color: black;}
 .menu h1 {text-align: center;}
 .menu ul {text-align: center;}
@@ -26,38 +13,25 @@
 .menu_mail {font-size: 1.2vw}
 .menu_links {font-size: 2.3vw}
 
-.image-cropper {
-  width: 12em;
-  height: 12em;
-  position: center;
-  overflow: hidden;
-  border-radius: 50%;
-  border-style: solid;
-  border-color: black;
-  text-align: center;
-  margin:0 auto;
-  font-size: 1vw;}
+.image-cropper {font-size: 1vw; width: 13vw; height: 13vw;
+  margin:0 auto; text-align: center; position: center; overflow: hidden;
+  border-radius: 50%; border-style: solid; border-color: black;}
 
-.img {
-  display: inline;
-  margin:0 auto;
-}
+.img {display: inline; margin:0 auto;}
   
-.content {color: #000000; padding: 1vw; margin-top: 13vw; white-space: normal; overflow:auto; font-size:2.5vw}
+.content {color: #000000; padding: 3vw; margin-top: 13vw; white-space: normal; overflow:auto; font-size:3vw}
 .content a {color: blue; background-color: transparent; text-decoration: none;}
 .content a:hover {color: purple}
 .content-title {font-size:3vw}
 
-.main-theme {
-  color: #000000;
-  white-space: normal;
-  background-color: transparent
-}
+.content-music {font-size:3vw; text-align:center}
+
+.main-theme {color: #000000; white-space: normal; background-color: transparent}
 
 .main {float:left; width:50%; overflow:auto; margin-left:20%}
 .main a {color: blue; background-color: transparent; text-decoration: none;}
 .main a:hover {color: purple}
 
-.bar {float:left; width:30%; text-align:center; min-height:400px;}
-
 .list {padding: 1vw;}
+
+.bar {float:left; width:30%; text-align:center; min-height:400px;}
