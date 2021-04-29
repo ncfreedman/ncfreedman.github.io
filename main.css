@@ -19,19 +19,19 @@
 
 .img {display: inline; margin:0 auto;}
   
-.content {color: #000000; padding: 3vw; margin-top: 13vw; white-space: normal; overflow:auto; font-size:3vw}
+.content {color: #000000; padding: 3vw; margin-top: 13vw; white-space: normal; overflow:auto; font-size:2.3vw}
 .content a {color: blue; background-color: transparent; text-decoration: none;}
 .content a:hover {color: purple}
-.content-title {font-size:3vw}
+.content-title {font-size:2.3vw}
 
-.content-music {font-size:3vw; text-align:center}
+.content-music {font-size:2.3vw; text-align:center}
 
 .main-theme {color: #000000; white-space: normal; background-color: transparent}
 
-.main {float:left; width:50%; overflow:auto; margin-left:20%}
+.main {float:left; width:60%; overflow:auto; margin-left:20%}
 .main a {color: blue; background-color: transparent; text-decoration: none;}
 .main a:hover {color: purple}
 
 .list {padding: 1vw;}
 
-.bar {float:left; width:30%; text-align:center; min-height:400px;}
+.bar {float:left; width:20%; text-align:center; min-height:400px;}
