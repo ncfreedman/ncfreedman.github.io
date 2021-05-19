@@ -1,7 +1,14 @@
 /*MENU*/
-.menu {float:left; font-size: 20px; width: 300px; height: 100%; text-align:center;
-  overflow:auto; overflow-wrap: break-word; overflow-x: hidden; overflow-y: hidden;
-  position: fixed; position:absolute; z-index: 1; top: 0; left: 0; padding-top: 10px;}
+.menu {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 .menu h1 {text-align: center; color: black;}
 .menu h1 {text-align: center;}
 .menu ul {text-align: center;}
@@ -25,7 +32,7 @@
 
 .content-music {font-size:20px; text-align:center}
 
-.main {float:left; overflow:auto; margin-left: 300px; width: calc(100% - 320px); padding-top: 10px}
+.main {float:left; overflow:auto; margin-left: 300px; width: calc(100% - 330px); padding-top: 10px;}
 .main a {color: blue; background-color: transparent; text-decoration: none;}
 .main a:hover {color: purple}
 
