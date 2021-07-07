@@ -37,3 +37,10 @@
 .main a:hover {color: purple}
 
 .list {padding: 20px;}
+
+.koan-text {
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    box-sizing: border-box;
+}
