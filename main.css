@@ -44,3 +44,10 @@
     text-align: center;
     box-sizing: border-box;
 }
+
+.quote-text {
+    padding-left: 10%;
+    padding-right: 30%;
+    text-align: left;
+    box-sizing: border-box;
+}

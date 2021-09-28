@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MIND TEXTURE RANDOMISER!</title>
+  <meta name="description" content="Jacob's Mind Texture Randomiser for fun" />
+  <meta name="keywords" content="mind, texture, mind texture, randomizer, randomiser, jacob collier, jacob, collier, metaphor, generator, hajanga" />
+  <meta name="author" content="metatags generator">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="3 month">
+</head>
+<body style="font-family:Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;">
+<div style="color:#555;
+			height: 30%">
+</div>
+<div id="output" style="color:#555;
+					display: block;
+					text-align: center;
+					line-height: 50px;
+    				width: auto;
+    				height: auto;
+    				text-align: center;
+                    font-size: 2em;
+    				font-weight: bold;
+    				">
+</div>
+
+<script src="jquery.js"></script>
+<script src="baffle.min.js"></script>
+
+<script>
+
+var extendedAdjectives = function(){
+	var content;
+};
+var intensifyingAdverbs = function(){
+	var content;
+};
+var simpleAdjectives = function(){
+	var content;
+};
+var textures = function(){
+	var content;
+};
+var consequencials = function(){
+	var content;
+};
+var extendedVerbs = function(){
+	var content;
+};
+var separableVerbs = function(){
+	var content;
+};
+var simpleVerbs = function(){
+	var content;
+};
+var characters = function(){
+	var content;
+};
+var connectives = function(){
+	var content;
+};
+var characteralPrecursors = function(){
+	var content;
+};
+
+
+function loadTextFileToArray(path, array){
+	jQuery.get(path, function(data) {
+    array.content = data.toString().split("\n");
+});
+}
+
+loadTextFileToArray('text/1 extended adjectives.txt', extendedAdjectives);
+loadTextFileToArray('text/2 intensifying adverbs.txt', intensifyingAdverbs);
+loadTextFileToArray('text/3 simple adjectives.txt', simpleAdjectives);
+loadTextFileToArray('text/4 TEXTURES.txt', textures);
+loadTextFileToArray('text/6 consequencials.txt', consequencials);
+loadTextFileToArray('text/7 extended verbs.txt', extendedVerbs);
+loadTextFileToArray('text/7 separable verbs.txt', separableVerbs);
+loadTextFileToArray('text/7 simple verbs.txt', simpleVerbs);
+loadTextFileToArray('text/8 characters.txt', characters);
+loadTextFileToArray('text/9 connectives.txt', connectives);
+loadTextFileToArray('text/8.1 characteral precursors.txt', characteralPrecursors);
+
+var pickRandom = function(list) {
+	return list[Math.floor(Math.random()*list.length)] + " ";
+};
+
+var l = function(text){
+	console.log(text);
+};
+
+
+var generateLinkPhrase = function(){
+	var link = pickRandom(links.content);
+	return link;
+};
+
+function crapSyncDelay(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+function RollDice(probabilityPercentage){
+	var x = Math.random();
+	if((probabilityPercentage / 100) > x){
+		return true;
+	}
+	else{
+		return false;
+	}
+
+}
+
+function introLetterTicker(){
+	//setTimeout(function(){alert("working?");}, 4000);
+
+	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> Mind Texture Randomiser </a>";
+	document.getElementById('output').innerHTML = word;
+}
+
+function readTextInRandomVoice(text){
+	var voicelist = window.responsiveVoice.getVoices();
+	var voiceName;
+	var killList = ["Croatian Male","Macedonian Male","Serbian Male","Bosnian Male","Esperanto Male","Catalan Male","Latin Male","Albanian Male","Swahili Male","Slovak Male","Greek Male","Arabic Male","Swedish Male"];
+	function chooseVoiceName(){
+		var voice;
+		while(true){
+			voice = voicelist[Math.floor(Math.random()*voicelist.length)].name;
+			var isNotUnique = 0;
+			for(var i=0; i<killList.length; i++){
+				if(voice == killList[i]){
+					isNotUnique = 1;
+					break;
+				}
+			}
+			if(isNotUnique == 0){
+				break;
+			}
+		}
+		return voice;
+	}
+	voiceName = chooseVoiceName();
+	var pitchContainer = {pitch: 2};
+	console.log(voiceName);
+	responsiveVoice.speak(text, voiceName);
+}
+
+function GenerateIntenseAdjective(){
+	var t1 = pickRandom(simpleAdjectives.content);
+	if(RollDice(27)){
+		return t1 + " " + pickRandom(intensifyingAdverbs.content);
+	}
+	else{
+		return t1;
+	}
+}
+
+
+function GenerateTexture_BasicCompound(){
+	var texture = " ";
+
+	while(1){
+
+		if(RollDice(21)){
+			texture += " " + pickRandom(extendedAdjectives.content);
+		}
+		if(RollDice(70)){
+			var t1 = pickRandom(simpleAdjectives.content);
+			if(RollDice(27)){
+				texture += " " + pickRandom(intensifyingAdverbs.content) + " " + t1;
+			}
+			else{
+				texture += " " + t1;
+			}
+		}
+		if(RollDice(0)){
+			texture += " " + pickRandom(textures.content) + " with";
+		}
+		if(RollDice(100)){
+			texture += " " + pickRandom(textures.content);
+		}
+		if(RollDice(75)){
+			texture += " " + pickRandom(textures.content);
+		}
+
+		if(RollDice(0) === false){
+			break;
+		}
+
+		texture += " " + pickRandom(connectives.content);
+	}
+
+	if(RollDice(39)){
+			texture += " " + pickRandom(consequencials.content);
+	}
+	if(RollDice(35)){
+			texture += " " + "#" + pickRandom(textures.content.concat(simpleAdjectives.content));
+	}
+
+	return texture;
+
+}
+
+
+function GenerateTexture_VerbCompound1(){
+	var texture = " ";
+
+
+	if(RollDice(30)){
+			texture += " " + pickRandom(simpleAdjectives.content);
+	}
+	if(RollDice(100)){
+			texture += " " + pickRandom(textures.content);
+	}
+
+	if(RollDice(48)){
+			texture += " " + pickRandom(separableVerbs.content.concat(extendedVerbs.content));
+	}
+	else{
+		var link = " ";
+		if(Math.random()>0.75){
+			if(Math.random()>0.5){
+				link = " with ";
+			}
+			else{
+				link = " using ";
+			}
+		texture += " " + pickRandom(simpleVerbs.content) + link;
+		}
+
+	}
+
+	if(RollDice(30)){
+			texture += " " + pickRandom(simpleAdjectives.content);
+	}
+	if(RollDice(100)){
+			texture += " " + pickRandom(textures.content);
+	}
+
+	return texture;
+
+}
+
+
+function GenerateTexture_VerbCompound2(){
+	var texture = " ";
+
+	if(RollDice(70)){
+		if(RollDice(35)){
+			texture += " " + pickRandom(simpleAdjectives.content);
+		}
+		if(RollDice(100)){
+			texture += " " + pickRandom(textures.content);
+		}
+	}
+	else{
+		if(RollDice(15)){
+			texture += " " + pickRandom(characteralPrecursors.content);
+		}
+		texture += " " + pickRandom(characters.content);
+	}
+
+	if(RollDice(100)){
+			texture += " " + pickRandom(separableVerbs.content.concat(extendedVerbs.content.concat(simpleVerbs.content)));
+	}
+
+	if(RollDice(72)){
+		texture += " " + pickRandom(textures.content);
+	}
+	else{
+		if(RollDice(20)){
+			texture += " " + pickRandom(characteralPrecursors.content);
+		}
+		texture += " " + pickRandom(characters.content);
+	}
+
+	return texture;
+}
+
+
+function GenerateSimile(){
+	var texture = "as ";
+
+	if(RollDice(75)){
+			texture += " " + pickRandom(textures.content);
+	}
+	else{
+			texture += " " + pickRandom(simpleAdjectives.content);
+	}
+	texture += " as ";
+	if(RollDice(78)){
+			texture += " " + pickRandom(textures.content);
+	}
+	else{
+		if(RollDice(20)){
+			texture += " " + pickRandom(characteralPrecursors.content);
+		}
+		texture += " " + pickRandom(characters.content);
+	}
+	return texture;
+}
+
+function GenerateTexture_VerbCompound3(){
+	var texture = " ";
+	var character1 = " ";
+	var character2 = " ";
+	var character3 = " ";
+	var character4 = " ";
+
+	if(RollDice(20)){
+		texture += " " + pickRandom(characteralPrecursors.content);
+	}
+	if(RollDice(100)){
+		character1 = pickRandom(characters.content);
+		texture += " " + character1;
+	}
+	if(RollDice(100)){
+			texture += " " + pickRandom(separableVerbs.content.concat(extendedVerbs.content.concat(simpleVerbs.content)));
+	}
+	if(RollDice(50)){
+			texture += " " + pickRandom(textures.content);
+	}
+	else{
+		if(RollDice(20)){
+			texture += " " + pickRandom(characteralPrecursors.content);
+		}
+		character2 = pickRandom(characters.content);
+		while(character2 == character1){
+			character2 = pickRandom(characters.content);
+		}
+		texture += " " + character2;
+	}
+	texture += " with ";
+	if(RollDice(100)){
+			texture += " " + pickRandom(textures.content);
+	}
+	if(RollDice(20)){
+		texture += ", ";
+		if(RollDice(50)){
+			texture += " " + pickRandom(textures.content);
+		}
+		else{
+			if(RollDice(20)){
+				texture += " " + pickRandom(characteralPrecursors.content);
+			}
+			character3 = pickRandom(characters.content);
+			while(character3 == character1 || character3 == character2){
+				character3 = pickRandom(characters.content);
+			}
+			texture += " " + character3;
+		}
+	}
+	texture += " and ";
+	if(RollDice(35)){
+			texture += " " + pickRandom(simpleAdjectives.content);
+	}
+	if(RollDice(100)){
+		if(RollDice(60)){
+			texture += " " + pickRandom(textures.content);
+		}
+		else{
+			character4 = pickRandom(characters.content);
+			while(character4 == character1 || character4 == character2 || character4 == character3){
+				character4 = pickRandom(characters.content);
+			}
+			texture += " " + character4;
+		}
+	}
+	return texture;
+}
+
+printTexture = function() {
+
+	var finalTexture = " ";
+
+
+	if(RollDice(13)){
+		l("Texture Only");
+		finalTexture = pickRandom(textures.content);
+	}
+	else if(RollDice(26)){
+		l("GenerateTexture_BasicCompound");
+		finalTexture = GenerateTexture_BasicCompound();
+	}
+	else if(RollDice(12)){
+		l("GenerateTexture_VerbCompound1");
+		finalTexture = GenerateTexture_VerbCompound1();
+	}
+	else if(RollDice(40)){
+		l("GenerateTexture_VerbCompound2");
+		finalTexture = GenerateTexture_VerbCompound2();
+	}
+	else if(RollDice(100)){
+		l("GenerateTexture_VerbCompound3");
+		finalTexture = GenerateTexture_VerbCompound3();
+	}
+
+
+	var linkTagOpen = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\">";
+	var linkTagClose = "</a>";
+
+	document.getElementById('output').innerHTML = linkTagOpen + finalTexture + linkTagClose;
+
+
+	let b = baffle('#textureLink', {
+    speed: 10
+	});
+	b.start();
+	b.reveal(200);
+
+	//readTextInRandomVoice(finalTexture);
+
+
+
+  
+};
+
+//printTexture();
+//setInterval(printTexture, 7300);
+//
+//
+introLetterTicker();
+
+</script>
+</body>
+</html>
