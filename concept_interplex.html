@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MIND TEXTURE RANDOMISER!</title>
-  <meta name="description" content="Jacob's Mind Texture Randomiser for fun" />
-  <meta name="keywords" content="mind, texture, mind texture, randomizer, randomiser, jacob collier, jacob, collier, metaphor, generator, hajanga" />
-  <meta name="author" content="metatags generator">
-  <meta name="robots" content="index, follow">
-  <meta name="revisit-after" content="3 month">
+  <title>CONCEPT INTERPLEX</title>
 </head>
 <body style="font-family:Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;">
 <div style="color:#555;
@@ -68,7 +63,6 @@ function loadTextFileToArray(path, array){
 	jQuery.get(path, function(data) {
         array.content = data.toString().split("\n");
     });
-    return array;
 }
 
 loadTextFileToArray('text/1 extended adjectives.txt', extendedAdjectives);
@@ -121,7 +115,7 @@ function RollDice(probabilityPercentage){
 function introLetterTicker(){
 	//setTimeout(function(){alert("working?");}, 4000);
 
-	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> Mind Texture Randomiser </a>";
+	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> ENTER CONCEPT INTERPLEX </a>";
 	document.getElementById('output').innerHTML = word;
 }
 
@@ -382,10 +376,9 @@ printTexture = function() {
 
     
 
-	if(RollDice(100)){
+	if(RollDice(13)){
 		l("Texture Only");
 		finalTexture = pickRandom(textures.content);
-        document.getElementById('output').innerHTML = "works0"
 	}
 	else if(RollDice(26)){
 		l("GenerateTexture_BasicCompound");
@@ -407,27 +400,15 @@ printTexture = function() {
 	var linkTagOpen = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\">";
 	var linkTagClose = "</a>";
     
-    
 	document.getElementById('output').innerHTML = linkTagOpen + finalTexture + linkTagClose;
     
-
 	let b = baffle('#textureLink', {
     speed: 10
 	});
 	b.start();
 	b.reveal(200);
-
-	//readTextInRandomVoice(finalTexture);
-
-
-
-  
 };
 
-//printTexture();
-//setInterval(printTexture, 7300);
-//
-//
 introLetterTicker();
 
 </script>

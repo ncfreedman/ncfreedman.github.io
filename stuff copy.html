@@ -43,8 +43,11 @@ var characteralPrecursors = [];
 
 
 function loadTextFileToArray(path, array){
-	jQuery.get(path, function(data) {
-        array = data.toString().split("\n");
+	// jQuery.get(path, function(data) {
+    //     array.content = data.toString().split("\n");
+    // });
+    jQuery.get(path, function(data) {
+        array = alert(data).split("\n");
     });
 }
 
