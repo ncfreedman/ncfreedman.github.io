@@ -29,46 +29,23 @@
 
 <script>
 
-var extendedAdjectives = function(){
-	var content;
-};
-var intensifyingAdverbs = function(){
-	var content;
-};
-var simpleAdjectives = function(){
-	var content;
-};
-var textures = function(){
-	var content;
-};
-var consequencials = function(){
-	var content;
-};
-var extendedVerbs = function(){
-	var content;
-};
-var separableVerbs = function(){
-	var content;
-};
-var simpleVerbs = function(){
-	var content;
-};
-var characters = function(){
-	var content;
-};
-var connectives = function(){
-	var content;
-};
-var characteralPrecursors = function(){
-	var content;
-};
+var extendedAdjectives = [];
+var intensifyingAdverbs = [];
+var simpleAdjectives = [];
+var textures = [];
+var consequencials = [];
+var extendedVerbs = [];
+var separableVerbs = [];
+var simpleVerbs = [];
+var characters = [];
+var connectives = [];
+var characteralPrecursors = [];
 
 
 function loadTextFileToArray(path, array){
 	jQuery.get(path, function(data) {
-        array.content = data.toString().split("\n");
+        array = data.toString().split("\n");
     });
-    return array;
 }
 
 loadTextFileToArray('text/1 extended adjectives.txt', extendedAdjectives);
@@ -94,7 +71,7 @@ var l = function(text){
 
 
 var generateLinkPhrase = function(){
-	var link = pickRandom(links.content);
+	var link = pickRandom(links);
 	return link;
 };
 
@@ -122,7 +99,7 @@ function introLetterTicker(){
 	//setTimeout(function(){alert("working?");}, 4000);
 
 	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> Mind Texture Randomiser </a>";
-	document.getElementById('output').innerHTML = word;
+	document.getElementById('output').innerHTML = textures[0];
 }
 
 function readTextInRandomVoice(text){
@@ -153,9 +130,9 @@ function readTextInRandomVoice(text){
 }
 
 function GenerateIntenseAdjective(){
-	var t1 = pickRandom(simpleAdjectives.content);
+	var t1 = pickRandom(simpleAdjectives);
 	if(RollDice(27)){
-		return t1 + " " + pickRandom(intensifyingAdverbs.content);
+		return t1 + " " + pickRandom(intensifyingAdverbs);
 	}
 	else{
 		return t1;
@@ -169,39 +146,39 @@ function GenerateTexture_BasicCompound(){
 	while(1){
 
 		if(RollDice(21)){
-			texture += " " + pickRandom(extendedAdjectives.content);
+			texture += " " + pickRandom(extendedAdjectives);
 		}
 		if(RollDice(70)){
-			var t1 = pickRandom(simpleAdjectives.content);
+			var t1 = pickRandom(simpleAdjectives);
 			if(RollDice(27)){
-				texture += " " + pickRandom(intensifyingAdverbs.content) + " " + t1;
+				texture += " " + pickRandom(intensifyingAdverbs) + " " + t1;
 			}
 			else{
 				texture += " " + t1;
 			}
 		}
 		if(RollDice(0)){
-			texture += " " + pickRandom(textures.content) + " with";
+			texture += " " + pickRandom(textures) + " with";
 		}
 		if(RollDice(100)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 		}
 		if(RollDice(75)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 		}
 
 		if(RollDice(0) === false){
 			break;
 		}
 
-		texture += " " + pickRandom(connectives.content);
+		texture += " " + pickRandom(connectives);
 	}
 
 	if(RollDice(39)){
-			texture += " " + pickRandom(consequencials.content);
+			texture += " " + pickRandom(consequencials);
 	}
 	if(RollDice(35)){
-			texture += " " + "#" + pickRandom(textures.content.concat(simpleAdjectives.content));
+			texture += " " + "#" + pickRandom(textures.concat(simpleAdjectives));
 	}
 
 	return texture;
@@ -214,14 +191,14 @@ function GenerateTexture_VerbCompound1(){
 
 
 	if(RollDice(30)){
-			texture += " " + pickRandom(simpleAdjectives.content);
+			texture += " " + pickRandom(simpleAdjectives);
 	}
 	if(RollDice(100)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 	}
 
 	if(RollDice(48)){
-			texture += " " + pickRandom(separableVerbs.content.concat(extendedVerbs.content));
+			texture += " " + pickRandom(separableVerbs.concat(extendedVerbs));
 	}
 	else{
 		var link = " ";
@@ -232,16 +209,16 @@ function GenerateTexture_VerbCompound1(){
 			else{
 				link = " using ";
 			}
-		texture += " " + pickRandom(simpleVerbs.content) + link;
+		texture += " " + pickRandom(simpleVerbs) + link;
 		}
 
 	}
 
 	if(RollDice(30)){
-			texture += " " + pickRandom(simpleAdjectives.content);
+			texture += " " + pickRandom(simpleAdjectives);
 	}
 	if(RollDice(100)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 	}
 
 	return texture;
@@ -254,31 +231,31 @@ function GenerateTexture_VerbCompound2(){
 
 	if(RollDice(70)){
 		if(RollDice(35)){
-			texture += " " + pickRandom(simpleAdjectives.content);
+			texture += " " + pickRandom(simpleAdjectives);
 		}
 		if(RollDice(100)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 		}
 	}
 	else{
 		if(RollDice(15)){
-			texture += " " + pickRandom(characteralPrecursors.content);
+			texture += " " + pickRandom(characteralPrecursors);
 		}
-		texture += " " + pickRandom(characters.content);
+		texture += " " + pickRandom(characters);
 	}
 
 	if(RollDice(100)){
-			texture += " " + pickRandom(separableVerbs.content.concat(extendedVerbs.content.concat(simpleVerbs.content)));
+			texture += " " + pickRandom(separableVerbs.concat(extendedVerbs.concat(simpleVerbs)));
 	}
 
 	if(RollDice(72)){
-		texture += " " + pickRandom(textures.content);
+		texture += " " + pickRandom(textures);
 	}
 	else{
 		if(RollDice(20)){
-			texture += " " + pickRandom(characteralPrecursors.content);
+			texture += " " + pickRandom(characteralPrecursors);
 		}
-		texture += " " + pickRandom(characters.content);
+		texture += " " + pickRandom(characters);
 	}
 
 	return texture;
@@ -289,20 +266,20 @@ function GenerateSimile(){
 	var texture = "as ";
 
 	if(RollDice(75)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 	}
 	else{
-			texture += " " + pickRandom(simpleAdjectives.content);
+			texture += " " + pickRandom(simpleAdjectives);
 	}
 	texture += " as ";
 	if(RollDice(78)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 	}
 	else{
 		if(RollDice(20)){
-			texture += " " + pickRandom(characteralPrecursors.content);
+			texture += " " + pickRandom(characteralPrecursors);
 		}
-		texture += " " + pickRandom(characters.content);
+		texture += " " + pickRandom(characters);
 	}
 	return texture;
 }
@@ -315,60 +292,60 @@ function GenerateTexture_VerbCompound3(){
 	var character4 = " ";
 
 	if(RollDice(20)){
-		texture += " " + pickRandom(characteralPrecursors.content);
+		texture += " " + pickRandom(characteralPrecursors);
 	}
 	if(RollDice(100)){
-		character1 = pickRandom(characters.content);
+		character1 = pickRandom(characters);
 		texture += " " + character1;
 	}
 	if(RollDice(100)){
-			texture += " " + pickRandom(separableVerbs.content.concat(extendedVerbs.content.concat(simpleVerbs.content)));
+			texture += " " + pickRandom(separableVerbs.concat(extendedVerbs.concat(simpleVerbs)));
 	}
 	if(RollDice(50)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 	}
 	else{
 		if(RollDice(20)){
-			texture += " " + pickRandom(characteralPrecursors.content);
+			texture += " " + pickRandom(characteralPrecursors);
 		}
-		character2 = pickRandom(characters.content);
+		character2 = pickRandom(characters);
 		while(character2 == character1){
-			character2 = pickRandom(characters.content);
+			character2 = pickRandom(characters);
 		}
 		texture += " " + character2;
 	}
 	texture += " with ";
 	if(RollDice(100)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 	}
 	if(RollDice(20)){
 		texture += ", ";
 		if(RollDice(50)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 		}
 		else{
 			if(RollDice(20)){
-				texture += " " + pickRandom(characteralPrecursors.content);
+				texture += " " + pickRandom(characteralPrecursors);
 			}
-			character3 = pickRandom(characters.content);
+			character3 = pickRandom(characters);
 			while(character3 == character1 || character3 == character2){
-				character3 = pickRandom(characters.content);
+				character3 = pickRandom(characters);
 			}
 			texture += " " + character3;
 		}
 	}
 	texture += " and ";
 	if(RollDice(35)){
-			texture += " " + pickRandom(simpleAdjectives.content);
+			texture += " " + pickRandom(simpleAdjectives);
 	}
 	if(RollDice(100)){
 		if(RollDice(60)){
-			texture += " " + pickRandom(textures.content);
+			texture += " " + pickRandom(textures);
 		}
 		else{
-			character4 = pickRandom(characters.content);
+			character4 = pickRandom(characters);
 			while(character4 == character1 || character4 == character2 || character4 == character3){
-				character4 = pickRandom(characters.content);
+				character4 = pickRandom(characters);
 			}
 			texture += " " + character4;
 		}
@@ -384,7 +361,7 @@ printTexture = function() {
 
 	if(RollDice(100)){
 		l("Texture Only");
-		finalTexture = pickRandom(textures.content);
+		finalTexture = pickRandom(textures);
         document.getElementById('output').innerHTML = "works0"
 	}
 	else if(RollDice(26)){
