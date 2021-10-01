@@ -17,3 +17,4 @@ taunts
 baffles
 gathers
 crisp
+obliterates
