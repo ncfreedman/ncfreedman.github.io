@@ -2,7 +2,7 @@ bristle
 coconut
 corpus
 grape
-mechanism
+machine
 peton
 puzzle
 razor
@@ -28,3 +28,5 @@ factory
 manifold
 tesseract
 nucleus
+fractal
+waveform
