@@ -29,3 +29,7 @@ comforts
 sells
 encounters
 embarrasses
+weaves
+paints
+projects
+considers
