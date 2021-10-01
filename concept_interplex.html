@@ -17,6 +17,8 @@
                     font-size: 2em;
     				font-weight: bold;
                     padding-top: 10%;
+                    padding-left: 15%;
+                    padding-right: 25%;
     				">
 </div>
 
@@ -198,7 +200,7 @@ function GenerateTexture_BasicCompound(){
 	if(RollDice(35)){
 			texture += " " + "#" + pickRandom(textures.content.concat(simpleAdjectives.content));
 	}
-    
+
 	return texture;
 }
 
@@ -374,7 +376,7 @@ printTexture = function() {
 
 	var finalTexture = " ";
 
-    
+
 
 	if(RollDice(13)){
 		l("Texture Only");
@@ -396,12 +398,12 @@ printTexture = function() {
 		l("GenerateTexture_VerbCompound3");
 		finalTexture = GenerateTexture_VerbCompound3();
 	}
-    
+
 	var linkTagOpen = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\">";
 	var linkTagClose = "</a>";
-    
+
 	document.getElementById('output').innerHTML = linkTagOpen + finalTexture + linkTagClose;
-    
+
 	let b = baffle('#textureLink', {
     speed: 10
 	});
