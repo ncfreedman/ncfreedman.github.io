@@ -1,7 +1,6 @@
 bristle
 coconut
 corpus
-crisp
 grape
 mechanism
 peton
@@ -23,3 +22,6 @@ brute
 barbarian
 garden soil
 soil
+fig
+raptor
+factory

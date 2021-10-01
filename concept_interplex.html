@@ -17,8 +17,8 @@
                     font-size: 2em;
     				font-weight: bold;
                     padding-top: 10%;
-                    padding-left: 15%;
-                    padding-right: 25%;
+                    padding-left: 5%;
+                    padding-right: 15%;
     				">
 </div>
 
@@ -71,7 +71,7 @@ function loadTextFileToArray(path, array){
 loadTextFileToArray('text/1 extended adjectives.txt', extendedAdjectives);
 loadTextFileToArray('text/2 intensifying adverbs.txt', intensifyingAdverbs);
 loadTextFileToArray('text/3 simple adjectives.txt', simpleAdjectives);
-loadTextFileToArray('text/4 TEXTURES.txt', textures);
+loadTextFileToArray('text/8 characters.txt', textures);
 loadTextFileToArray('text/6 consequencials.txt', consequencials);
 loadTextFileToArray('text/7 extended verbs.txt', extendedVerbs);
 loadTextFileToArray('text/7 separable verbs.txt', separableVerbs);
@@ -118,7 +118,7 @@ function RollDice(probabilityPercentage){
 function introLetterTicker(){
 	//setTimeout(function(){alert("working?");}, 4000);
 
-	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> ENTER CONCEPT INTERPLEX </a>";
+	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> Congratulations. You have found my CONCEPT INTERPLEX </a>";
 	document.getElementById('output').innerHTML = word;
 }
 
