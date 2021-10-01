@@ -4,3 +4,5 @@ blunt
 curt
 ensconced
 dorkish
+resolved
+confused
