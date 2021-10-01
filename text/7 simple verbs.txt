@@ -33,3 +33,5 @@ weaves
 paints
 projects
 considers
+believes
+integrates
