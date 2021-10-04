@@ -16,13 +16,12 @@ spoons
 taunts
 baffles
 gathers
-crisp
 obliterates
-soiled
+soiles
 works on
 concerns
 taunts
-believes in
+believes
 encrusts
 engulfes
 comforts
@@ -36,3 +35,4 @@ considers
 believes
 integrates
 tesselates
+floors
