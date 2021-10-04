@@ -68,17 +68,17 @@ function loadTextFileToArray(path, array){
     });
 }
 
-loadTextFileToArray('text_test/1 extended adjectives.txt', extendedAdjectives);
-loadTextFileToArray('text_test/2 intensifying adverbs.txt', intensifyingAdverbs);
-loadTextFileToArray('text_test/3 simple adjectives.txt', simpleAdjectives);
-loadTextFileToArray('text_test/4 TEXTURES.txt', textures);
-loadTextFileToArray('text_test/6 consequencials.txt', consequencials);
-loadTextFileToArray('text_test/7 extended verbs.txt', extendedVerbs);
-loadTextFileToArray('text_test/7 separable verbs.txt', separableVerbs);
-loadTextFileToArray('text_test/7 simple verbs.txt', simpleVerbs);
-loadTextFileToArray('text_test/8 characters.txt', characters);
-loadTextFileToArray('text_test/9 connectives.txt', connectives);
-loadTextFileToArray('text_test/8.1 characteral precursors.txt', characteralPrecursors);
+loadTextFileToArray('text/1 extended adjectives.txt', extendedAdjectives);
+loadTextFileToArray('text/2 intensifying adverbs.txt', intensifyingAdverbs);
+loadTextFileToArray('text/3 simple adjectives.txt', simpleAdjectives);
+loadTextFileToArray('text/4 characters.txt', textures);
+loadTextFileToArray('text/6 consequencials.txt', consequencials);
+loadTextFileToArray('text/7 extended verbs.txt', extendedVerbs);
+loadTextFileToArray('text/7 separable verbs.txt', separableVerbs);
+loadTextFileToArray('text/7 simple verbs.txt', simpleVerbs);
+loadTextFileToArray('text/8 characters.txt', characters);
+loadTextFileToArray('text/9 connectives.txt', connectives);
+loadTextFileToArray('text/8.1 characteral precursors.txt', characteralPrecursors);
 
 var pickRandom = function(list) {
     var oouut = list[Math.floor(Math.random()*list.length)] + " ";
@@ -104,20 +104,13 @@ function crapSyncDelay(milliseconds) {
   }
 }
 
-function RollDice(probabilityPercentage){
+function RollDice(threh){
 	var x = Math.random();
-	if((probabilityPercentage / 100) > x){
-		return true;
-	}
-	else{
-		return false;
-	}
-
+	if((thresh / 100) > x){return true;	}
+	else{return false;}
 }
 
 function introLetterTicker(){
-	//setTimeout(function(){alert("working?");}, 4000);
-
 	var word = "<a href=\"#\" id=\"textureLink\" style=\"color:#555; text-decoration: none\" onclick=\"printTexture()\"> You have found my CONCEPT INTERPLEX </a>";
 	document.getElementById('output').innerHTML = word;
 }
@@ -157,7 +150,7 @@ function GenerateIntenseAdjective(){
 	else{
 		return t1;
 	}
-}
+}s
 
 
 function GenerateTexture_BasicCompound(){
@@ -378,19 +371,19 @@ printTexture = function() {
 
 
 
-	if(RollDice(13)){
+	if(RollDice(20)){
 		l("Texture Only");
 		finalTexture = pickRandom(textures.content);
 	}
-	else if(RollDice(26)){
+	else if(RollDice(40)){
 		l("GenerateTexture_BasicCompound");
 		finalTexture = GenerateTexture_BasicCompound();
 	}
-	else if(RollDice(35)){
+	else if(RollDice(60)){
 		l("GenerateTexture_VerbCompound1");
 		finalTexture = GenerateTexture_VerbCompound1();
 	}
-	else if(RollDice(40)){
+	else if(RollDice(80)){
 		l("GenerateTexture_VerbCompound2");
 		finalTexture = GenerateTexture_VerbCompound2();
 	}
