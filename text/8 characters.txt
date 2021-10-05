@@ -31,3 +31,8 @@ nucleus
 fractal
 waveform
 monk
+scorpion
+orchard
+forrest
+rain
+acid

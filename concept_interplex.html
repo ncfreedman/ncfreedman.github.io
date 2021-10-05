@@ -148,7 +148,7 @@ function readTextInRandomVoice(text){
 
 function GenerateIntenseAdjective(){
 	var t1 = pickRandom(simpleAdjectives.content);
-	if(RollDice(27)){
+	if(RollDice(50)){
 		return t1 + " " + pickRandom(intensifyingAdverbs.content);
 	}
 	else{
@@ -373,21 +373,19 @@ printTexture = function() {
 
 	var finalTexture = " ";
 
-
-
-	if(RollDice(20)){
-		l("Texture Only");
-		finalTexture = pickRandom(textures.content);
-	}
-	else if(RollDice(40)){
+	// if(RollDice(20)){
+	// 	l("Texture Only");
+	// 	finalTexture = pickRandom(textures.content);
+	// }
+	if(RollDice(25)){
 		l("GenerateTexture_BasicCompound");
 		finalTexture = GenerateTexture_BasicCompound();
 	}
-	else if(RollDice(60)){
+	else if(RollDice(50)){
 		l("GenerateTexture_VerbCompound1");
 		finalTexture = GenerateTexture_VerbCompound1();
 	}
-	else if(RollDice(80)){
+	else if(RollDice(75)){
 		l("GenerateTexture_VerbCompound2");
 		finalTexture = GenerateTexture_VerbCompound2();
 	}
