@@ -51,3 +51,6 @@
     text-align: left;
     box-sizing: border-box;
 }
+
+.note_links {color: black;}
+.note_links a:hover {color: purple}
