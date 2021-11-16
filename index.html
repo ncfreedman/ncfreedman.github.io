@@ -1,62 +1,375 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0">
-        <title>Noah Chaim Freedman</title>
-        <link rel="stylesheet" href="main.css">
-        <link rel="icon" href="headshot.jpg">
-        <script type="text/javascript">
-            function iframeLoaded() {
-                var iFrameID = document.getElementById("main_frame");
-                if(iFrameID) {
-                      iFrameID.height = "";
-                      iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
-                }
-            }
-        </script>
-    </head>
-    <style>iframe{width:100%; height:800px;}</style>
-    <div id="menu" class="menu">
-        <ul type="none">
-            <li id=txt>
-                <b style="font-size:20px">Noah Chaim Fre<a href = "#body" onclick="document.getElementById('body').innerHTML = '<iframe id=\'main_frame\' src=\'concept_interplex.html\' frameborder=\'0\' scrolling=\'no\' onload=\'iframeLoaded()\'></iframe>'">e</a>dman<hr></b>
-                <div class="menu_mail">
-                    <b><a href="freedman.pdf" download><img src="cv_icon.jpg" class="rounded" style="height:20px"/></a></b>
-                    <b><a href = "https://scholar.google.com/citations?user=EXLKL30AAAAJ&hl=en&oi=ao" target="_blank"><img src="scholar_icon.jpg" class="rounded" style="height:20px"/></a></b>
-                    <b><a href = "https://github.com/ncfreedman" target="_blank"><img src="github_icon.jpg" class="rounded" style="height:20px"/></a></b>
-                    <b><a href = "mailto: noah.freedman@pitt.edu"><img src="mail_icon.jpg" class="rounded" style="height:20px"/></a></b>
-                    <b><a href = "https://twitter.com/ncfreedman" target="_blank"><img src="twitter_icon.jpg" class="rounded" style="height:20px"/></a></b>
+<html>
+<title>Noah Chaim Freedman</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-white w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="headshot.jpg" style="width:82%;" class="w3-round"><br><br>
+    <h4><b>Noah Chaim Freedman</b></h4>
+  </div>
+  <div class="w3-panel w3-large">
+    &nbsp&nbsp&nbsp
+    <b><a href="freedman.pdf" download><img src="cv_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp
+    <b><a href = "https://scholar.google.com/citations?user=EXLKL30AAAAJ&hl=en&oi=ao" target="_blank"><img src="scholar_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp
+    <b><a href = "https://github.com/ncfreedman" target="_blank"><img src="github_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp
+    <b><a href = "mailto: noah.freedman@pitt.edu"><img src="mail_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp
+    <b><a href = "https://twitter.com/ncfreedman" target="_blank"><img src="twitter_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp
+  </div>
+
+  <div class="w3-bar-block">
+    <font size="+2">
+        <a href="#bio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>bio</a>
+
+        <a href="#science" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>science</a>
+
+        <a href="#music" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>music</a>
+
+        <a href="#koans" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>koans</a>
+
+        <a href="#quotes" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>quotes</a>
+    </font>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+    <header id="bio">
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b><font size="+7">bio</font></b></h1>
+        </div>
+    </header>
+
+    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+        <font size="+2">
+            I am a MD PhD student in the <a href="https://www.mdphd.pitt.edu/" target=”_blank”>University of Pittsburgh & Carnegie Mellon University MSTP</a> interested in connections between neural dynamics, human cognition and psychiatric disease. I am motivated to develop computational frameworks to better interpret neural signals, understand basic mechanisms of the brain and ultimately yield improved diagnostic methods and interventions in the clinic. Contributing to the design of more effective therapies on the basis of neurocomputational theory is one of my major goals.
+        </font>
+    </div>
+
+    <header id="science">
+        <div class="w3-container">
+            <h1><b><font size="+7">science</font></b></h1>
+        </div>
+    </header>
+
+    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+        <font size="+2">
+            <ul>
+                <li>(June - August 2021) Research Rotation<br><a href="http://tsenglab.biostat.pitt.edu/index.htm" target=”_blank”>Bioinformatics and Statistical Learning Group</a>, University of Pittsburgh Dept. of Statistics</li>
+                <div class="list">
+                    <br>
+                    <i>Used causal inference methods to discover genetic regulatory pathways of key circadian genes in schizophrenia</i><br><br>
+                    <i>Statistical pipeline for identifying parametric differences in circadian gene expression between postmortem RNA-seq cohorts</i>
                 </div>
-            </li>
-        </ul>
-        <div class="image-cropper">
-            <img src="headshot.jpg" class="rounded" style="height:150px"/>
-        </div>
-        <div class="menu_links">
-            <ul type="none">
-                <li>
-                    <a href="#body" onclick="document.getElementById('body').innerHTML = '<iframe id=\'main_frame\' src=\'bio.html\' frameborder=\'0\' scrolling=\'no\' onload=\'iframeLoaded()\'></iframe>';document.getElementById('main_frame').style.height = '800px'"><b><i>bio</i></b></a>
-                </li>
+                <br><li>(May 2019 - May 2021) Postgraduate Research Associate<br><a href="https://medicine.yale.edu/lab/blumenfeld/" target=”_blank”>Blumenfeld Lab</a>, Yale Medical School Dept. of Neurology</li>
+                <div class="list">
+                    <i>Neural dynamics underlying conscious sensory perception of threshold intensity stimuli</i><br><br>
+                    (2021) Early cortical signals in visual stimulus detection. NeuroImage <a href="https://www.sciencedirect.com/science/article/pii/S1053811921008818?dgcid=rss_sd_all" target=”_blank”>(link)</a>
+                    <br><br>
+                    (2021) More than a feeling: scalp EEG and eye correlates of conscious tactile perception. biorxiv. <a href="https://www.biorxiv.org/content/10.1101/2021.10.31.466706v1" target=”_blank”>(link)</a>                
+                </div>
                 <br>
-                <li>
-                    <a href="#body" onclick="document.getElementById('body').innerHTML = '<iframe id=\'main_frame\' src=\'science.html\' frameborder=\'0\' scrolling=\'no\' onload=\'iframeLoaded()\'></iframe>';document.getElementById('main_frame').style.height = '1000px'"><b><i>science</i></b></a>
-                </li>
+                <li>(April 2017 - May 2019) Undergraduate Research Associate<br><a href="https://www.engineering.pitt.edu/cui/" target=”_blank”>Neural Tissue Engineering Lab</a>, University of Pittsburgh Dept. of Bioengineering</li>
+                <div class="list">
+                    <i>Neural sensor for real time in vivo dopamine recordings</i><br><br>
+                    (2019) Direct in Vivo Electrochemical Detection of Resting Dopamine Using Poly(3,4-ethylenedioxythiophene)/Carbon Nanotube Functionalized Microelectrodes. Analytical Chemistry. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7175412/" target=”_blank”>(link)</a><br><br>
+                    (2019) Advancing squarewave voltammetry at PEDOT/fCNT carbon fiber microelectrodes for in vivo basal dopamine detection. <a href="https://www.honorscollege.pitt.edu/bphil" target=”_blank”>BPhil Thesis.</a> <a href="http://d-scholarship.pitt.edu/36557/" target=”_blank”>(link)</a>
+                </div>
                 <br>
-                <li>
-                    <a href="#body" onclick="document.getElementById('body').innerHTML = '<iframe id=\'main_frame\' src=\'music.html\' scrolling=\'no\' frameborder=\'0\' onload=\'iframeLoaded()\'></iframe>';document.getElementById('main_frame').style.height = '2000px'"><b><i>music</i></b></a>
-                </li>
-                <br>
-                <li>
-                    <a href="#body" onclick="document.getElementById('body').innerHTML = '<iframe id=\'main_frame\' src=\'koans.html\' scrolling=\'no\' frameborder=\'0\' onload=\'iframeLoaded()\'></iframe>';document.getElementById('main_frame').style.height = '5100px'"><b><i>koans</i></b></a>
-                </li>
-                <br>
-                <li>
-                    <a href="#body" onclick="document.getElementById('body').innerHTML = '<iframe id=\'main_frame\' src=\'quotes.html\' scrolling=\'no\' frameborder=\'0\' onload=\'iframeLoaded()\'></iframe>';document.getElementById('main_frame').style.height = '3000px'"><b><i>quotes</i></b></a>
-                </li>
+                <li>(May 2016 - May 2019) Undergraduate Research Associate<br><a href="http://www.wpic.pitt.edu/research/pican/" target=”_blank”>Program in Cognitive Affective Neuroscience</a>, University of Pittsburgh Dept. of Psychiatry</li>
+                <div class="list">
+                    <i>Software for running low-cost psychophysiology experiments</i>
+                </div>
             </ul>
+        </font>
+    </div>
+
+    <header id="music">
+        <div class="w3-container">
+            <h1><b><font size="+7" color=purple>m</font><font size="+7" color=red>u</font><font size="+7" color=orange>s</font><font size="+7" color=green>i</font><font size="+7" color=blue>c</font></b></h1>
+        </div>
+    </header>
+
+    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+        <div style="text-align:center;"><h1><i><u>sketches</u></i></h1></div>
+        <div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=violet>heijeiro</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="heijeiro1.mp3" type="audio/mpeg">
+            </audio>
+        </div><div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=green>bday groove</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="bday_groove.mp3" type="audio/mpeg">
+            </audio>
+        </div><br><br><br><br>
+        <div style="text-align:center;"><h1><i><u>snippets & loops</u></i></h1></div>
+        <div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=skyblue>beach walk</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="beach_walk.mp3" type="audio/mpeg">
+            </audio>
+        </div><div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=purple>latch groove</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="latch_groove.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <br><br>
+        <div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=red>rumba</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="rumba.mp3" type="audio/mpeg">
+            </audio>
+        </div><div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=orange>wonky bunch crunch</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="wonky_bunch_crunch.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <br><br>
+        </div><div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=brown>grit groove</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="grit_groove.mp3" type="audio/mpeg">
+            </audio>
+        </div><div style="width:50%; display:inline-block; text-align:center;">
+            <h3><i><font color=purple>noches</font></i></h3>
+            <audio id="aud" controls style="width: 70%;">
+                <source src="noches.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <br><br><br><br>
+        <font size="+2">
+        <h2>Some album recommendations</h2>
+        <ul>
+            <li>Monk's Dream - Thelonius Sphere Monk</li>
+            <li>Kind of Blue - Miles Davis</li>
+            <li>Birth of the Cool - Miles Davis</li>
+            <li>Jaco Pastorius - Jaco Pastorius</li>
+            <li>I am - Earth Wind & Fire</li>
+            <li>When I Fall in Love - Brad Mehldau</li>
+            <li>Brasileiro - Sergio Mendes</li>
+            <li>Slaves Mass - Hermeto Pascoal</li>
+            <li>Zabumbe-Bum-A - Hermeto Pascoal</li>
+            <li>Cerebro Magnetico - Hermeto Pascoal</li>
+            <li>Chimarrao Com Rapadura - Hermeto Pascoal</li>
+            <li>The Velvet Touch of Lenny Breau - Lenny Breau</li>
+            <li>Trane's Delight - Poncho Sanchez</li>
+            <li>Innervisions - Stevie Wonder</li>
+            <li>Hotter Than July - Stevie Wonder</li>
+            <li>Fulfillingness' First Finale - Stevie Wonder</li>
+            <li>Gula Matari - Quincy Jones</li>
+            <li>Q's Jook Joint - Quincy Jones</li>
+            <li>Take 6 - Take 6</li>
+            <li>Still Live - Keith Jarret</li>
+            <li>Headhunters - Herbie Hancock</li>
+            <li>Mingus - Joni Mitchell</li>
+            <li>Clouds - Joni Mitchell</li>
+            <li>Song to a Seagull - Joni Mitchell</li>
+            <li>Lumpy Gravy - Frank Zappa</li>
+            <li>We're Only In It For The Money - Frank Zappa</li>
+            <li>One Size Fits All - Frank Zappa</li>
+            <li>Joe's Garage Acts I, II & III - Frank Zappa</li>
+            <li>Now He Sings, Now He Sobs - Chick Corea</li>
+            <li>Trilogy - Chick Corea</li>
+            <li>Three Quartets - Chick Corea</li>
+            <li>Friends - Chick Corea</li>
+            <li>In My Room - Jacob Collier</li>
+            <li>Djesse Vol. 3 - Jacob Collier</li>
+            <li>Reset EP - Flying Lotus</li>
+            <li>The Song of Singing - ChickCorea</li>
+        </ul></font>
+
+        <header id="koans">
+            <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+            <div class="w3-container">
+                <h1><b><font size="+7">koans</font></b></h1>
+            </div>
+        </header>
+    
+        <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+            <div style="text-align:center;"><font size="+2">
+                <br>
+                <h3><u>Not Flag, Not Wind</u></h3>
+                Two monks were arguing about a flag. One said, "The flag is moving." The other said, "The wind is moving." The sixth patriarch, Eno, happened to be passing by. He told them, "Not the wind, not the flag; mind is moving."<br><br><br>
+                <h3><u>A Monk Is Rejected</u></h3>
+                A monk approached Seppo and made a formal bow. Seppo hit the monk five times with his stick. The monk asked, "Where is my fault?" The Master struck the monk five additional blows and dismissed him with a loud, "Khats!"<br><br><br>
+                <h3><u>Tipping Over a Water Vase</u></h3>
+                Hyakujo wished to send a monk to open a new monastery. He told his pupils that whoever answered a question most ably would be appointed. Placing a water vase on the ground, he asked, "Who can say what this is without calling its name?" The chief monk said, "No one can call it a tree stump." Isan, the cook monk, tipped over the case with his foot and went out. Hyakujo smiled and said, "The chief monk loses." And Isan became the master of the new monastery.<br><br><br>
+                <h3><u>Joshu's Zen</u></h3>
+                A student asked Joshu, "If I haven't anything in my mind, what shall I do?" Joshu replied, "Throw it out." "But if I haven't anything, how can I throw it out?" continued the student. "Well," said Joshu, "then carry it out."<br><br><br>
+                <h3><u>Isan Summons Two Official Monks</u></h3>
+                Master Isan sent for the treasurer, but when he appeared, Isan said, "I sent for the treasurer, not you." The treasurer did not know what to say. The Master next sent for the chief monk, but when he came, Isan said, "I sent for the chief monk, not you." The chief monk, also, was dumbfounded.<br><br><br>
+                <h3><u>The Turtle in the Garden</u></h3>
+                A monk saw a turtle in the garden of Daizui's monastery and asked the teacher, "All beings cover their bones with flesh and skin. Why does this being cover its flesh and skin with bones?" Master Daizu took off one of his sandals and covered the turtle with it.<br><br><br>
+                <h3><u>Manjusri Enters the Gate</u></h3>
+                One day as Manjusri stood outside the gate, the Buddha called to him, "Manjusri, Manjusri, why do you not enter?" Manjusri replied, "I do not see myself outside. Why enter?"<br><br><br>
+                <h3><u>The Short Staff</u></h3>
+                Shuzan held out his short staff and said, "If you call this a short staff, you oppose its reality. If you do not call it a short staff, you ignore the fact. Now what do you wish to call this?"<br><br><br>
+                <h3><u>Bells and Robes</u></h3>
+                Zen Master Unmon said: "The world is vast and wide. Why do you put on your robes at the sound of a bell?"<br><br><br>
+                <h3><u>Kotei Strikes and Monk</u></h3>
+                A student of Kassai came to visit Kotei and bowed. Kotei immediately struck the monk. The monk said, "I came especially tosee you and paid homage with a bow. Why do you strike me?" Kotei struck the monk again and chased him from the monastery. The monk returned to his teacher, Kassai, and told the story. "Do you understand or not?" asked Kassai. "No, I don't," answered the monk. "Fortunately you do not understand," Kassai said. "If you did, I would be dumbfounded."<br><br><br>
+                <h3><u>How Do you See You Buddha-nature?</u></h3>
+                A monk asked Seppo, "I understand that a person in the stage of Cravaka sees his Buddha-nature as he sees the moon at night, and a person in the stage of Bodhisattva sees his Buddha-nature as he sees the sun at day. Tell me how you see your own Buddha-nature?" In answer, Seppo struck the monk three times with his stick. The monk went to another teacher, Ganto, and asked the same question. Ganto slapped him three times.<br><br><br>
+                <h3><u>Basho's Staff</u></h3>
+                Basho said to his disciple, "When you have a staff, I will give it to you. If you have no staff, I will take it away from you."<br><br><br>
+                <h3><u>Stone Buddha</u></h3>
+                Likuko said to Nansen, "In my house there is a stone that sits up or lies down. I intend to carve it as a Buddha. Can I do it?" Nansen answered, "Yes, you can." Likuko persisted, "Can I really do it?" Nansen answered, "No, you can not!"<br><br><br>
+                <h3><u>The Meditation Arm-rest</u></h3>
+                Ryuge asked Master Suibi, "Why did Bodhidharma come west?" Suibi said, "Pass me that meditation arm-rest." No sooner did Ryuge do so than Suibi hit him over the head with it. Ryuge said, "Strike me as you will, that still does not answer my question." Next, Ryuge went to Master Rinzai and asked the same question. Rinzai said, "Please give me that meditation mat." Ryuge handed the rolled-up mat to Rinzai, who promptly struck him with it.<br><br><br>
+                <h3><u>A Cup of Tea</u></h3>
+                A professor commuted from Tokyo to Nanin's temple in Kamakura many Sunday mornings to learn Zen. One morning Nanin served him tea. He poured the professor's cup full-and kept on pouring. The professor watched until he could restrain himself no longer. "Sensei!" he protested, "it is overflowing!" Then Master Nanin said, "Like this cup, you are so full of opinions and speculations that there is no room for anything further."<br><br><br>
+                <h3><u>No Water, No Moon</u></h3>
+                Chiyono, a nun, studied many years under Zen Master Bukko at the Engakuji Temple in Kamakura. Still, she could not attain the fruits of meditation. One moonlight night she was carrying water carefully in an old wooden pail girded by bamboo. The bamboo broke, and the bottom fell out of the pail. At that moment she was set free. Chiyono said, "No more water in the pail, no more moon in the water."<br><br><br>
+                <h3><u>A Monk's Zen Gesture</u></h3>
+                The librarian saw a monk sitting in meditation in his library for a long time. At length the librarian asked, "Why do you not read the satras?" The monk answered, "I do not know how to read." "Why don't you ask someone who knows?" suggested the librarian. The monk stood up, put both hands on his chest in a Zen gesture, bowed deeply, and asked politely, "What is this?" The librarian could not tell him.<br><br><br>
+                <h3><u>The Ideograph for Mind</u></h3>
+                An old monk wrote the Chinese character for mind on the gate, window, and wall of his little hut. Hogen corrected him, saying, "The gate should have the character for gate, the window the character for window, and the wall the character for wall." But Genkaku, a third monk, commented, "The gate manifests itself without a character, so the window and wall need no sign at all."<br><br><br>
+                <h3><u>Preaching Dharma</u></h3>
+                When Master Gichu had taken his seat to lecture, a layman came from the audience and walked from east to west in front of the rostrum. A monk then demonstrated his Zen by walking from west to east. "The layman understands Zen," Gichu said, "but the monk does not." The layman approached the teacher saying, "I thank you for your approval." Before his speech was ended, the Master struck him with his stick. The monk approached the Master saying, "I implore your instruction," and was also struck with the stick. Gichu then asked, "Who is going to conclude this koan?" No one in the assembly spoke. Gichu repeated the question twice. Still there was no answer. "Then," said Master Gichu, "I will conclude it." He threw his stick to the floor and returned to his room.<br><br><br>
+                <h3><u>The Giver Should Be Thankful</u></h3>
+                While Seisetsu was Master of Engakuji Temple Kamakura, Umezu Seibei, a wealthy merchant, donated 500 ryo to build larger monastery quarters. Umezu brought the money in gold to the teacher. Seitsu said, "All right, I will receive it." Umezu was quite dissatisfied with this response. Hi hinted, "In that sack is 500 ryo." "You told me that before," replied Seisetsu. "Even though I am quite wealthy," Umezu continued, "500 ryo is a lot of money." "Do you want me to thank you for it?" asked Seisetsu. "Don't you think you should?" Umezu replied. "Why should I?" inquired Seisetsu. "The giver should be thankful."<br><br><br>
+            </font></div>
+        </div>
+
+        <header id="quotes">
+            <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+            <div class="w3-container">
+                <h1><b><font size="+7">quotes</font></b></h1>
+            </div>
+        </header>
+    
+        <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+            <font size="+2">
+                <br>
+            Indulge your passion for science but let your science be human, and such as may have a direct reference to action and society.
+            <br> - David Hume, Concerning Human Understanding
+            <br><br><br>
+
+            Every fact you learn was an exciting discovery to someone at sometime.
+            <br> - Richard Steinman (paraphrasing)
+            <br><br><br>
+            
+            Let your questions guide you.
+            <br><br><br>
+            
+            It was not by making yourself heard but by staying sane that you carried on the human heritage.
+            <br> - George Orwell, 1984
+            <br><br><br>
+
+            If I am the only one who succeeded, then I failed.
+            <br> - Mike Tyson
+            <br><br><br>
+
+            Once your chance has just begun, never leave it til its done. Either labor great or small, do it well or not at all.
+            <br> - Quincy Jone's Father to his sons
+            <br><br><br>
+            
+            Stop being patient and start asking yourself, "How do I accomplish my 10 years plan in 6 months?" You will probably fail, but you Wil be a lot further ahead of the person who simply accepted it was going to take 10 years
+            <br> - Elon Musk
+            <br><br><br>
+
+            Freedom is more important than knowledge.
+            <br> - Jacob Collier
+            <br><br><br>
+
+            You learn something new every second.
+            <br> - Reggie Watts
+            <br><br><br>
+            
+            Some things are best expressed in a hug.
+            <br> - Ari
+            <br><br><br>
+
+            You look at where you're going and where you are and it never makes sense, but then you look back at where you've been and a pattern seems to emerge. And if you project forward from that pattern, then sometimes you can come up with something.
+            <br> - Robert Pirsig, Zen and the Art of Motorcycle Maintenance
+            <br><br><br>
+
+            When it's the right time to do it, I'll do it.
+            <br> - Chris Sharma
+            <br><br><br>
+            
+            I am intolerant of intolerance.
+            <br><br><br>
+
+            Not one drop of my self worth depends on your acceptance of me.
+            <br> - Quincy Jones and Ray Charles
+            <br><br><br>
+
+            Some people say when you are tired the training is just starting. Thats when you have to try hard.<br> - Adam Ondra
+            <br><br><br>
+
+            I trust that impatience with ignorance can lead to enlightened visions as well as to hallucinations of enlightenment.
+            <br> - Daniel X Freedman
+            <br><br><br>
+            
+            I can imagine a different muffin everytime you say muffin
+            <br> - Random woman with her 2 kids in NYC
+            <br><br><br>
+
+            Dr. Welcher's here. Wonderful doctor. Gave a guy 6 months to live, couldn't pay the bill gave him another 6 months.
+            <br> - Henny Youngman, Goodfellas
+            <br><br><br>
+
+            I am never more proud of you than I am when you fall.
+            <br> - Rana Awdish, dIn Shock
+            <br><br><br>
+
+            Rarely does a response make something better. What makes something better is connection.
+            <br> - Brene Brown
+            <br><br><br>
+
+            Za Mah Yaish.
+            <br> - Bubbie Sue
+            <br><br><br>
+
+            You're the only one who can stop you doing anything.
+            <br> - Jacob collier
+            <br><br><br>
+
+            My feeling is always leave at least 20 to 30% of room for the lord to walk through the room. Because then youre leaving room for the magic.
+            <br> - Quincy Jones
+            <br><br><br>
+
+            You're already dead if you notice a smell
+            <br> - ClownCore
+            <br><br><br>
+            </font>
         </div>
     </div>
-    <div id="body" class="main">
-        <iframe id="main_frame" src="bio.html" frameborder="0" scrolling="no" onload="iframeLoaded()"></iframe>
-    </div>
+    
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
 </html>

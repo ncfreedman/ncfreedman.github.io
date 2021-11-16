@@ -1,7 +1,7 @@
 /*MENU*/
 .menu {
   height: 100%;
-  width: 300px;
+  width: 30%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -17,22 +17,22 @@
 .menu a:hover {color: purple;}
 
 .menu_mail {font-size: 17px}
-.menu_links {font-size: 30px}
+.menu_links {font-size: 3vw}
 
-.image-cropper {font-size: 1vw; width: 150px; height: 150px;
+.image-cropper {font-size: 1vw; width: 20vw; height: 20vw;
   margin:0 auto; text-align: center; position: center; overflow: hidden;
   border-radius: 50%; border-style: solid; border-color: black;}
 .img {display: inline; margin:0 auto;}
   
 /*CONTENT*/
-.content {color: #000000; padding: 10px; margin-top: 10px; white-space: normal; overflow:auto; font-size: 20px}
+.content {color: #000000; padding: 1vw; margin-top: 1vw; white-space: normal; overflow:auto; font-size: 20px}
 .content a {color: blue; background-color: transparent; text-decoration: none;}
 .content a:hover {color: purple}
 .content-title {font-size: 20px}
 
 .content-music {font-size:20px; text-align:center}
 
-.main {float:left; overflow:auto; margin-left: 300px; width: calc(100% - 330px); padding-top: 10px;}
+.main {float:left; overflow:auto; margin-left: 30%; width: 70%; padding-top: 1vw;}
 .main a {color: blue; background-color: transparent; text-decoration: none;}
 .main a:hover {color: purple}
 
