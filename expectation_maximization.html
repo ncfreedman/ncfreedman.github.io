@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <title>Noah Chaim Freedman</title>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="headshot.jpg">
@@ -82,40 +88,57 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:300px">
     <br>
-    <header id="science">
+    <header id="Expectation Maximization">
         <div class="w3-container">
-            <h1><b><font size="+7">science</font></b></h1>
+            <h1><b><font size="+7">Expectation Maximization</font></b></h1>
         </div>
     </header>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px">
         <font size="+2">
-            <ul>
-                <li>(June - August 2021) Research Rotation<br><a href="http://tsenglab.biostat.pitt.edu/index.htm" target=”_blank”>Bioinformatics and Statistical Learning Group</a>, University of Pittsburgh Dept. of Statistics</li>
-                <div class="list">
-                    <br>
-                    <i>Used causal inference methods to discover genetic regulatory pathways of key circadian genes in schizophrenia</i><br><br>
-                    <i>Statistical pipeline for identifying parametric differences in circadian gene expression between postmortem RNA-seq cohorts</i>
-                </div>
-                <br><li>(May 2019 - May 2021) Postgraduate Research Associate<br><a href="https://medicine.yale.edu/lab/blumenfeld/" target=”_blank”>Blumenfeld Lab</a>, Yale Medical School Dept. of Neurology</li>
-                <div class="list">
-                    <i>Neural dynamics underlying conscious sensory perception of threshold intensity stimuli</i><br><br>
-                    (2021) Early cortical signals in visual stimulus detection. NeuroImage <a href="https://www.sciencedirect.com/science/article/pii/S1053811921008818?dgcid=rss_sd_all" target=”_blank”>(link)</a>
-                    <br><br>
-                    (2021) More than a feeling: scalp EEG and eye correlates of conscious tactile perception. biorxiv. <a href="https://www.biorxiv.org/content/10.1101/2021.10.31.466706v1" target=”_blank”>(link)</a>                
-                </div>
-                <br>
-                <li>(April 2017 - May 2019) Undergraduate Research Associate<br><a href="https://www.engineering.pitt.edu/cui/" target=”_blank”>Neural Tissue Engineering Lab</a>, University of Pittsburgh Dept. of Bioengineering</li>
-                <div class="list">
-                    <i>Neural sensor for real time in vivo dopamine recordings</i><br><br>
-                    (2019) Direct in Vivo Electrochemical Detection of Resting Dopamine Using Poly(3,4-ethylenedioxythiophene)/Carbon Nanotube Functionalized Microelectrodes. Analytical Chemistry. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7175412/" target=”_blank”>(link)</a><br><br>
-                    (2019) Advancing squarewave voltammetry at PEDOT/fCNT carbon fiber microelectrodes for in vivo basal dopamine detection. <a href="https://www.honorscollege.pitt.edu/bphil" target=”_blank”>BPhil Thesis.</a> <a href="http://d-scholarship.pitt.edu/36557/" target=”_blank”>(link)</a>
-                </div>
-                <br>
-                <li>(May 2016 - May 2019) Undergraduate Research Associate<br><a href="http://www.wpic.pitt.edu/research/pican/" target=”_blank”>Program in Cognitive Affective Neuroscience</a>, University of Pittsburgh Dept. of Psychiatry</li>
-                <div class="list">
-                    <i>Software for running low-cost psychophysiology experiments</i>
-                </div>
-            </ul>
+EM algorithms are extremely useful schemes in unsupervised learning. Let's say we have a set of observations \(\{x_i\}_{i=1}^N\) and we want to fit a model with latent variables \(\textbf{z}\) and parameters \(\theta\). Our log-likelihood function takes the form<br><br>
+
+\[
+log(p(\textbf x|\theta))=\sum_{i=1}^{N}log(p(x_i|\theta))=\sum_{i=1}^{N}log\Big(\sum_{\textbf{z}}p(x_i, \textbf{z}|\theta)\Big)
+\]<br>
+
+Now, we can introduce an arbitrary set of distributions \(\{Q_i(\textbf{z})\}_{i=1}^{N}\) and use Jensen's inequality to obtain a loose lower bound on the log-likelihood as follows<br><br>
+
+\[
+\sum_{i=1}^{N}log\Big(\sum_{\textbf{z}}Q_i(\textbf{z})\frac{p(x_i, \textbf{z}|\theta)}{Q_i(\textbf{z})}\Big)\geq\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log\Big(\frac{p(x_i, \textbf{z}|\theta)}{Q_i(\textbf{z})}\Big)
+\]<br>
+
+For a given \(\theta\) we can make this bound tight by setting \(Q_i(\textbf{z})\propto p(x_i,\textbf{z}|\theta)\) as<br><br>
+
+\[
+Q_i(\textbf{z})=\frac{p(x_i,\textbf{z}|\theta)}{\sum_{\widetilde{\textbf{z}}}p(x_i,\widetilde{\textbf{z}}|\theta)}=\frac{p(x_i,\textbf{z}|\theta)}{p(x_i|\theta)}=p(\textbf{z}|x_i,\theta)
+\]<br>
+
+We can now obtain new estimates of our parameters by optimizing this lower bound w.r.t. \(\theta\). Given our updated \(\theta\), we can construct a new lower bound with which we can once again update our \(\theta\). This procedure is iterated as such until we obtain convergence in \(\theta\) or in the log-likelihood.<br><br>
+
+This algorithm monotonically increases in the log-likelihood but will only guarantee a local maximum.<br><br>
+
+<h1><b><font size="+3">Alternative Lower Bound Derivation</font></b></h1><br>
+
+We define a function \(\mathcal{L}(Q,\theta)\) and show how it is related to \(log(p(x,\theta))\).<br><br>
+
+\begin{equation*}
+\begin{aligned}
+\mathcal{L}(\textbf{Q},\theta){} &=\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log\Big(\frac{p(\textbf{z}|x_i,\theta)p(x_i|\theta)}{Q_i(\textbf{z})}\Big)\\
+&=\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log\Big(\frac{p(\textbf{z}|x_i,\theta)}{Q_i(\textbf{z})}\Big)+\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log(p(x_i|\theta))\\
+&=\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log\Big(\frac{p(\textbf{z}|x_i,\theta)}{Q_i(\textbf{z})}\Big)+\sum_{i=1}^{N}log(p(x_i|\theta))\\
+&=-\sum_{i=1}^{N}KL(Q_i(\textbf{z})||p(\textbf{z}|x_i,\theta)) + log(p(\textbf{x}|\theta))
+\end{aligned}
+\end{equation*}<br>
+
+Now we can rearrange to get another angle on the lower bound we used above.<br><br>
+
+\begin{equation*}
+\begin{aligned}
+log(p(\textbf{x}|\theta))=\mathcal{L}(Q(\textbf{z}),\theta)+\sum_{i=1}^{N}KL(Q_i(\textbf{z})||p(\textbf{z}|x_i,\theta))
+\end{aligned}
+\end{equation*}<br>
+
+This form also has a nice interpretation for the starting point of Jensen's inequality, where the inequality sign is obtained by removing the \(KL\) term which is always \(\geq0\). This also further explains our choice of \(\textbf{Q}\) at each iteration to make tight the lower bound, as that choice minimizes the \(KL\) terms.
         </font>
     </div>    
 </div>
