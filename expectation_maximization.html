@@ -110,15 +110,19 @@ Now, we can introduce an arbitrary set of distributions \(\{Q_i(\textbf{z})\}_{i
 \sum_{i=1}^{N}log\Big(\sum_{\textbf{z}}Q_i(\textbf{z})\frac{p(x_i, \textbf{z}|\theta)}{Q_i(\textbf{z})}\Big)\geq\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log\Big(\frac{p(x_i, \textbf{z}|\theta)}{Q_i(\textbf{z})}\Big)
 \]<br>
 
-For a given \(\theta\) we can make this bound tight by setting \(Q_i(\textbf{z})\propto p(x_i,\textbf{z}|\theta)\) as<br><br>
+For a fixed \(\theta\) we can make this bound tight by setting \(Q_i(\textbf{z})\propto p(x_i,\textbf{z}|\theta)\) as<br><br>
 
 \[
 Q_i(\textbf{z})=\frac{p(x_i,\textbf{z}|\theta)}{\sum_{\widetilde{\textbf{z}}}p(x_i,\widetilde{\textbf{z}}|\theta)}=\frac{p(x_i,\textbf{z}|\theta)}{p(x_i|\theta)}=p(\textbf{z}|x_i,\theta)
 \]<br>
 
-We can now obtain new estimates of our parameters by optimizing this lower bound w.r.t. \(\theta\). Given our updated \(\theta\), we can construct a new lower bound with which we can once again update our \(\theta\). This procedure is iterated as such until we obtain convergence in \(\theta\) or in the log-likelihood.<br><br>
+We can now obtain new estimates of our parameters by fixing \(\textbf{Q}\) and optimizing this lower bound w.r.t. \(\theta\). Given our updated \(\theta\), we proceed by constructing a new lower bound with which we can once again update our \(\theta\) in the same manner. Note that since the \(Q\) are indepent of \(\theta\) during the optimization step, we can recast optimizing the lower bound as<br><br>
 
-This algorithm monotonically increases in the log-likelihood but will only guarantee a local maximum.<br><br>
+\[
+\arg\max_{\theta}\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log\Big(\frac{p(x_i, \textbf{z}|\theta)}{Q_i(\textbf{z})}\Big)=\arg\max_{\theta}\sum_{i=1}^{N}\sum_{\textbf{z}}Q_i(\textbf{z})log(p(x_i, \textbf{z}|\theta))
+\]<br>
+
+This procedure is iterated as such until we obtain convergence in \(\theta\) or in the log-likelihood. This algorithm monotonically increases in the log-likelihood but will only guarantee a local maximum.<br><br>
 
 <h1><b><font size="+3">Alternative Lower Bound Derivation</font></b></h1><br>
 
