@@ -3,7 +3,18 @@
 <title>Noah Chaim Freedman</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="headshot.jpg">
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script>
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html");
+});
+</script>
+<link rel="icon" href="cube.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,51 +50,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-white w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-<div class="sidebar">
-    <br>
-    <div class="w3-container w3-center" style="height:0;width:100%;padding-bottom:80%;">
-        <img src="headshot.jpg" style="width:80%;" class="w3-round"><br><br>
-    </div>
-    <div class="w3-container w3-center">
-        <font size="5%"><b>Noah Chaim Freedman</b></font>
-    </div>
-    <div class="w3-panel w3-large w3-center">
-        <b><a href="freedman.pdf" download><img src="cv_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "https://scholar.google.com/citations?user=EXLKL30AAAAJ&hl=en&oi=ao" target="_blank"><img src="scholar_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "https://github.com/ncfreedman" target="_blank"><img src="github_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "mailto: noah.freedman@pitt.edu"><img src="mail_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "https://twitter.com/ncfreedman" target="_blank"><img src="twitter_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-    </div>
-
-    <div class="w3-bar-block">
-        <font size="+2">
-            <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>bio</a>
-
-            <a href="science.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>science</a>
-
-            <!--<a href="links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>links</a>-->
-
-            <a href="notes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>notes</a>
-
-            <a href="music.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>music</a>
-
-            <a href="koans.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>koans</a>
-
-            <!--<a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>quotes</a>-->
-        </font>
-    </div>
-<!--</nav>-->
-</div>
+<div id="header"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+<div class="w3-main" style="text-align:justify; margin-left:15%;margin-right:15%;">
     <br>
-    <header id="music">
-        <div class="w3-container">
-            <h1><b><font size="+7" color=purple>m</font><font size="+7" color=red>u</font><font size="+7" color=orange>s</font><font size="+7" color=green>i</font><font size="+7" color=blue>c</font></b></h1>
-        </div>
-    </header>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px">
         <div style="text-align:center;"><h1><i><u>sketches</u></i></h1></div>
         
@@ -135,48 +106,53 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             </audio>
         </div>
         <br><br><br><br>
-        <font size="+2">
-        <h2>Some album recommendations</h2>
-        <ul>
-            <li>Monk's Dream - Thelonius Sphere Monk</li>
-            <li>Kind of Blue - Miles Davis</li>
-            <li>Birth of the Cool - Miles Davis</li>
-            <li>Jaco Pastorius - Jaco Pastorius</li>
-            <li>I am - Earth Wind & Fire</li>
-            <li>When I Fall in Love - Brad Mehldau</li>
-            <li>Brasileiro - Sergio Mendes</li>
-            <li>Slaves Mass - Hermeto Pascoal</li>
-            <li>Zabumbe-Bum-A - Hermeto Pascoal</li>
-            <li>Cerebro Magnetico - Hermeto Pascoal</li>
-            <li>Chimarrao Com Rapadura - Hermeto Pascoal</li>
-            <li>The Velvet Touch of Lenny Breau - Lenny Breau</li>
-            <li>Trane's Delight - Poncho Sanchez</li>
-            <li>Innervisions - Stevie Wonder</li>
-            <li>Hotter Than July - Stevie Wonder</li>
-            <li>Fulfillingness' First Finale - Stevie Wonder</li>
-            <li>Gula Matari - Quincy Jones</li>
-            <li>Q's Jook Joint - Quincy Jones</li>
-            <li>Take 6 - Take 6</li>
-            <li>Still Live - Keith Jarret</li>
-            <li>Headhunters - Herbie Hancock</li>
-            <li>Mingus - Joni Mitchell</li>
-            <li>Clouds - Joni Mitchell</li>
-            <li>Song to a Seagull - Joni Mitchell</li>
-            <li>Lumpy Gravy - Frank Zappa</li>
-            <li>We're Only In It For The Money - Frank Zappa</li>
-            <li>One Size Fits All - Frank Zappa</li>
-            <li>Joe's Garage Acts I, II & III - Frank Zappa</li>
-            <li>Now He Sings, Now He Sobs - Chick Corea</li>
-            <li>Trilogy - Chick Corea</li>
-            <li>Three Quartets - Chick Corea</li>
-            <li>Friends - Chick Corea</li>
-            <li>In My Room - Jacob Collier</li>
-            <li>Djesse Vol. 3 - Jacob Collier</li>
-            <li>Reset EP - Flying Lotus</li>
-            <li>The Song of Singing - ChickCorea</li>
-        </ul></font>
+        <div style="text-align:center">
+            <font size="+2">
+                <h1><font size="+3.5">Some album recommendations</font></h1>
+                Monk's Dream - Thelonius Sphere Monk<br>
+                Kind of Blue - Miles Davis<br>
+                Birth of the Cool - Miles Davis<br>
+                Jaco Pastorius - Jaco Pastorius<br>
+                I am - Earth Wind & Fire<br>
+                When I Fall in Love - Brad Mehldau<br>
+                Brasileiro - Sergio Mendes<br>
+                Slaves Mass - Hermeto Pascoal<br>
+                Zabumbe-Bum-A - Hermeto Pascoal<br>
+                Cerebro Magnetico - Hermeto Pascoal<br>
+                Chimarrao Com Rapadura - Hermeto Pascoal<br>
+                The Velvet Touch of Lenny Breau - Lenny Breau<br>
+                Trane's Delight - Poncho Sanchez<br>
+                Innervisions - Stevie Wonder<br>
+                Hotter Than July - Stevie Wonder<br>
+                Fulfillingness' First Finale - Stevie Wonder<br>
+                Gula Matari - Quincy Jones<br>
+                Q's Jook Joint - Quincy Jones<br>
+                Take 6 - Take 6<br>
+                Still Live - Keith Jarret<br>
+                Headhunters - Herbie Hancock<br>
+                Mingus - Joni Mitchell<br>
+                Clouds - Joni Mitchell<br>
+                Song to a Seagull - Joni Mitchell<br>
+                Lumpy Gravy - Frank Zappa<br>
+                We're Only In It For The Money - Frank Zappa<br>
+                One Size Fits All - Frank Zappa<br>
+                Joe's Garage Acts I, II & III - Frank Zappa<br>
+                Now He Sings, Now He Sobs - Chick Corea<br>
+                Trilogy - Chick Corea<br>
+                Three Quartets - Chick Corea<br>
+                Friends - Chick Corea<br>
+                In My Room - Jacob Collier<br>
+                Djesse Vol. 3 - Jacob Collier<br>
+                Reset EP - Flying Lotus<br>
+                The Song of Singing - ChickCorea<br>
+                Dinner Party - Kamasi Washington, Robert Glasper, Terrace Martin & 9th Wonder<br>
+                Please Rewind - Moonchild<br>
+                Swagism - Ghost-Note
+            </font>
+        </div>
     </div>
 </div>
 
+<div id="footer"></div>
 </body>
 </html>

@@ -7,6 +7,17 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script>
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html");
+});
+</script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -39,51 +50,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-white w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-<div class="sidebar">
+<div id="header"></div>
+
+<div class="w3-main" style="margin-left:15%;margin-right:15%;">
     <br>
-    <div class="w3-container w3-center" style="height:0;width:100%;padding-bottom:80%;">
-        <img src="headshot.jpg" style="width:80%;" class="w3-round"><br><br>
-    </div>
-    <div class="w3-container w3-center">
-        <font size="5%"><b>Noah Chaim Freedman</b></font>
-    </div>
-    <div class="w3-panel w3-large w3-center">
-        <b><a href="freedman.pdf" download><img src="cv_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "https://scholar.google.com/citations?user=EXLKL30AAAAJ&hl=en&oi=ao" target="_blank"><img src="scholar_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "https://github.com/ncfreedman" target="_blank"><img src="github_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "mailto: noah.freedman@pitt.edu"><img src="mail_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-        <b><a href = "https://twitter.com/ncfreedman" target="_blank"><img src="twitter_icon.jpg" class="rounded" style="height:30px"/></a></b>&nbsp&nbsp
-    </div>
-
-    <div class="w3-bar-block">
-        <font size="+2">
-            <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>bio</a>
-
-            <a href="science.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>science</a>
-
-            <!--<a href="links.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>links</a>-->
-
-            <a href="notes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>notes</a>
-
-            <a href="music.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>music</a>
-
-            <a href="koans.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>koans</a>
-
-            <!--<a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right fa-fw w3-margin-right"></i>quotes</a>-->
-        </font>
-    </div>
-<!--</nav>-->
-</div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
-    <br>
-    <header id="koans">
-        <div class="w3-container">
-            <h1><b><font size="+7">koans</font></b></h1>
-        </div>
-    </header>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px">
         <div style="text-align:center;"><font size="+2">
             <br>
@@ -106,7 +76,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
             <h3><u>Bells and Robes</u></h3>
             Zen Master Unmon said: "The world is vast and wide. Why do you put on your robes at the sound of a bell?"<br><br><br>
             <h3><u>Kotei Strikes and Monk</u></h3>
-            A student of Kassai came to visit Kotei and bowed. Kotei immediately struck the monk. The monk said, "I came especially tosee you and paid homage with a bow. Why do you strike me?" Kotei struck the monk again and chased him from the monastery. The monk returned to his teacher, Kassai, and told the story. "Do you understand or not?" asked Kassai. "No, I don't," answered the monk. "Fortunately you do not understand," Kassai said. "If you did, I would be dumbfounded."<br><br><br>
+            A student of Kassai came to visit Kotei and bowed. Kotei immediately struck the monk. The monk said, "I came especially to see you and paid homage with a bow. Why do you strike me?" Kotei struck the monk again and chased him from the monastery. The monk returned to his teacher, Kassai, and told the story. "Do you understand or not?" asked Kassai. "No, I don't," answered the monk. "Fortunately you do not understand," Kassai said. "If you did, I would be dumbfounded."<br><br><br>
             <h3><u>How Do you See You Buddha-nature?</u></h3>
             A monk asked Seppo, "I understand that a person in the stage of Cravaka sees his Buddha-nature as he sees the moon at night, and a person in the stage of Bodhisattva sees his Buddha-nature as he sees the sun at day. Tell me how you see your own Buddha-nature?" In answer, Seppo struck the monk three times with his stick. The monk went to another teacher, Ganto, and asked the same question. Ganto slapped him three times.<br><br><br>
             <h3><u>Basho's Staff</u></h3>
