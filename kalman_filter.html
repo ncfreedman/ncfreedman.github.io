@@ -61,7 +61,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
     </header>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px"><font size="+2">
-Let's say we have the following state evolution model<br><br>
+Kalman filters are nifty modelling and decoding methods for linear dynamical systems having some hidden or latent variables along with observables which are linearly related to the variables. This discussion will pertain to systems with mean \(0\) latent variables \(z\) and observables \(x\). Specifically, let's say we have the following state evolution model<br><br>
 
 \[z_1\sim N(\pi, V)\]
 \[z_t|z_{t-1}\sim N(Az_{t-1}, Q)\]<br>
@@ -70,7 +70,9 @@ along with an observation model<br><br>
 
 \[x_t|z_t\sim N(Cz_t, R)\]<br>
 
+Given a set of observations \(\{x_t\}_{t=1}^{N}\), or more generally a set of a set of observations (I won't discuss this here for notational simplicity), we can estimate our model parameters using the EM algorithm. On the other hand, if we have access to the latent variables, we can proceed by simply writing the log likelihood and solving for our parameters by setting partial derivatives to zero.<br><br>
 
+Given fitted parameters, we can now estimate latent variables from observations by maximizing \(P(z_t|\{x_s\}_{s=1}^t)\) w.r.t. \(z_t\). This turns out be Gaussian so finding the mean is sufficient and can be achieved by iterating the following steps:
     </font></div>
 </div>
 

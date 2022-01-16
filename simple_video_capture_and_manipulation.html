@@ -1,0 +1,165 @@
+<div style="text-align:center">
+    <video id="monitor" autoplay width="1000" height="1000" visibility="hidden"></video><br>
+    <canvas id="my-canvas" width="1000" height="750"></canvas>
+    <input type="range" min="0" max="1000" value="1" id="param_a">
+    <input type="range" min="0" max="1000" value="1" id="param_b">
+</div>
+
+<script>
+    window.onload = async () => {
+        const video = document.getElementById('monitor');
+        try {
+            video.srcObject = await navigator.mediaDevices.getUserMedia({video: true});
+
+            await new Promise(resolve => video.onloadedmetadata = resolve);
+        } catch (err) {
+            console.error(err);
+            alert("seomthing heypen")
+        }
+    };
+    document.getElementById('monitor').hidden = true;
+    var processor = {
+        timerCallback: function() {
+            this.computeFrame();
+            var self = this;
+            setTimeout(function () {
+                self.timerCallback();
+            }, 16);
+        },
+    
+        doLoad: function() {
+            this.video = document.getElementById("monitor");
+            this.c1 = document.getElementById("my-canvas");
+            this.ctx1 = this.c1.getContext("2d");
+            var self = this;
+            self.width = 1000;
+            self.height = 750;
+            self.timerCallback();
+        },
+    
+        computeFrame: function() {
+            this.ctx1.drawImage(this.video, 0, 0, this.width, this.height);
+            var frame = this.ctx1.getImageData(0, 0, this.width, this.height);
+            var transform = 4;
+            // 0: grayscale
+            // 1: scramble
+            // 2: 180 deg rotation
+            // 3: test orientation
+            // 4: cone
+
+            // get parameters
+            var param_a = 10 ** (document.getElementById("param_a").value * 5 / 1000);
+            var param_b = 10 ** (document.getElementById("param_b").value * 5 / 1000);
+
+            // for N x M image (n, m) linearized coordinate -> (4 * (n - 1) * M) + (4 * m)
+            // we can imagine embedding the image in a 2D plane where each pixel is located at integer coordinates. can use continuous transformations as long as we round
+
+            // cone
+            if (transform == 4){
+                var l = frame.data.length / 4;
+                let tmp = frame.data.slice();
+                for (var i = 0; i < l; i++) {
+                    // convert linear to 2D coordinates centered on origin
+                    var n = Math.floor((i + 1) / frame.width) - (frame.height / 2);
+                    if (!(((i + 1) % frame.width) == 0)){
+                        n = n + 1;
+                    }
+                    var m = i + 1 - (Math.floor((i + 1) / frame.width) * frame.width) - (frame.width / 2);
+                    m = -m  // flip horizontal
+                    
+                    // transform
+                    var theta = Math.atan(Math.abs(m/n));
+                    const dn = Math.sign(n) * Math.cos(theta) * param_a * Math.exp(-(1 / param_b) * Math.sqrt((n * n) + (m * m)));
+                    const dm = Math.sign(m) * Math.sin(theta) * param_a * Math.exp(-(1 / param_b) * Math.sqrt((n * n) + (m * m)));
+                    n = n + dn;
+                    m = m + dm;
+                    if (Math.abs(n) > (frame.height / 2)){
+                        n = Math.sign(n) * (frame.height / 2);
+                    }
+                    if (Math.abs(m) > (frame.width / 2)){
+                        m = Math.sign(m) * (frame.width / 2);
+                    }
+                    
+                    // convert 2D coordinates centered on origin to linear
+                    const n_new = Math.floor(n + (frame.height / 2));
+                    const m_new = Math.floor(m + (frame.height / 2));
+                    var i_new = 125;
+                    if (m_new == 0){
+                        i_new = i_new + (n_new * frame.width) - 1;
+                    } else {
+                        i_new = i_new + ((n_new - 1) * frame.width) + m_new - 1;
+                    }
+                    frame.data[i * 4 + 0] = tmp[i_new * 4 + 0];
+                    frame.data[i * 4 + 1] = tmp[i_new * 4 + 1];
+                    frame.data[i * 4 + 2] = tmp[i_new * 4 + 2];
+                }
+            }
+            
+            // test orientation...Results: indexes left to right and up to down
+            if (transform == 3){
+                var l = frame.data.length / 4;
+                for (var i = 0; i < l; i++) {
+                    frame.data[i * 4 + 0] = 255 * i / l;
+                    frame.data[i * 4 + 1] = 255 * i / l;
+                    frame.data[i * 4 + 2] = 255 * i / l;
+                }
+                frame.data[0] = 255;
+            }
+            
+            // 180 deg rotation
+            if (transform == 2){
+                var l = frame.data.length / 4;
+                let tmp = frame.data.slice()
+                for (var i = 0; i < l; i++) {
+                    frame.data[i * 4 + 0] = tmp[(l - i - 1) * 4 + 0];
+                    frame.data[i * 4 + 1] = tmp[(l - i - 1) * 4 + 1];
+                    frame.data[i * 4 + 2] = tmp[(l - i - 1) * 4 + 2];
+                }
+            }
+
+            // scramble
+            if (transform == 1){
+                function shuffle(array) {
+                    let currentIndex = array.length,  randomIndex;
+
+                    // While there remain elements to shuffle...
+                    while (currentIndex != 0) {
+
+                        // Pick a remaining element...
+                        randomIndex = Math.floor(Math.random() * currentIndex);
+                        currentIndex--;
+
+                        // And swap it with the current element.
+                        [array[currentIndex], array[randomIndex]] = [
+                        array[randomIndex], array[currentIndex]];
+                    }
+
+                    return array;
+                }
+                var l = frame.data.length / 4;
+                perm = shuffle([...Array(l).keys()])
+                for (var i = 0; i < l; i++) {
+                    frame.data[i * 4 + 0] = frame.data[perm[i] * 4 + 0];
+                    frame.data[i * 4 + 1] = frame.data[perm[i] * 4 + 1];
+                    frame.data[i * 4 + 2] = frame.data[perm[i] * 4 + 2];
+                }
+            }
+        
+            // grayscale
+            if (transform == 0){
+                var l = frame.data.length / 4;
+                for (var i = 0; i < l; i++) {
+                    var grey = (frame.data[i * 4 + 0] + frame.data[i * 4 + 1] + frame.data[i * 4 + 2]) / 3;
+                    frame.data[i * 4 + 0] = grey;
+                    frame.data[i * 4 + 1] = grey;
+                    frame.data[i * 4 + 2] = grey;
+                }
+            }
+
+            this.ctx1.putImageData(frame, 0, 0, 0, 0, 1000, 1000);
+            return;
+        }
+    };
+    processor.doLoad()
+</script>
+  
