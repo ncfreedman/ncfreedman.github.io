@@ -3,6 +3,10 @@
 <title>Noah Chaim Freedman</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="cube.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script
     src="https://code.jquery.com/jquery-3.3.1.js"
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -14,12 +18,9 @@ $(function(){
   $("#footer").load("footer.html");
 });
 </script>
-<link rel="icon" href="cube.png">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
 .sidebar {
   margin: 0;
   padding: 0;
@@ -27,17 +28,31 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
-  overflow: auto;}
-@media screen and (max-width: 1000px) {.sidebar {width:100%;height:auto;position:relative;}div.content{margin-left:0;}}
-@media screen and (max-width: 400px) {.sidebar a {text-align:center;float:none;}}
+  overflow: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
 </style>
 
-
 <body class="w3-white w3-content" style="max-width:1600px">
-    
+
 <div id="header"></div>
 
-<div class="w3-main" style="text-align:justify;margin-left:20%;margin-right:20%;">
+<div class="w3-main" style="text-align:justify; margin-left:15%;margin-right:15%;">
     <br>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px">
         <font size="+2">
@@ -48,9 +63,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
                 <li><a href="kalman_filter.html"></i>Kalman Filter</a></li>
             </ul>
         </font>
-    </div>    
+    </div>
 </div>
-    
+
 <div id="footer"></div>
 </body>
 </html>
