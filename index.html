@@ -1,68 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Noah Chaim Freedman</title>
-<meta charset="UTF-8">
-<meta name="description" content="Noah Chaim Freedman's website">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Noah Chaim Freedman">
-<script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous">
-</script>
-<script>
-$(function(){
-  $("#header").load("header.html");
-  $("#footer").load("footer.html");
-});
-</script>
-<link rel="icon" href="cube.png">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-@media (max-width: 768px) {
-    .txts {font-size: 2.8vw}
-    .heads {font-size: 3vw}
-    .titles {font-size: 4.5vw}
-    .headshot {width: 37vw}
-}
-
-@media (min-width: 769px) {
-    .txts {font-size: 1.2vw}
-    .heads {font-size: 1.4vw}
-    .titles {font-size: 2.5vw}
-    .headshot {width: 21vw}
-}
-
-</style>
+    <title>Noah Chaim Freedman</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Noah Chaim Freedman's website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Noah Chaim Freedman">
+    <link rel="icon" href="cube.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sty.css">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){$("#header").load("header.html");});
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        }
+        });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 
 <body class="w3-white w3-content" style="max-width:1600px">
 
-<div id="header"></div>
+    <div id="header"></div>
 
-<div class="w3-container w3-center">
-    <br><br><br>
-    <img src="headshot.jpg" class="headshot w3-round-xlarge"><br><br>
-    <div class="titles">Noah Chaim Freedman</div><br><br>
-    <b><a href="freedman.pdf" download><img src="cv_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
-    <b><a href = "https://scholar.google.com/citations?user=EXLKL30AAAAJ&hl=en&oi=ao" target="_blank"><img src="scholar_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
-    <b><a href = "https://github.com/ncfreedman" target="_blank"><img src="github_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
-    <b><a href = "mailto: noah.freedman@pitt.edu"><img src="mail_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
-    <b><a href = "https://twitter.com/ncfreedman" target="_blank"><img src="twitter_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
-</div>
-
-<div class="w3-main" style="text-align:justify; margin-left:15%; margin-right:15%;">
-    <br><br>
-    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-        <div class="heads">
-            I am a MD PhD student in the <a href="https://www.mdphd.pitt.edu/" target=”_blank”>University of Pittsburgh & Carnegie Mellon University MSTP</a>. My scientific interests lie at the intersection of applied mathematics, machine learning, neural dynamics, human cognition and psychiatric disease. I am motivated to develop new methods of analysis for better interpreting neural signals in hopes of elucidating basic computational mechanisms of the brain. A long-term vision of mine is to leverage computational methods for improved diagnosis and design of interventions in the clinic.<br><br>
-        </class>
+    <div class="w3-container w3-center">
+        <br><br><br>
+        <img src="headshot.jpg" class="headshot w3-round-xlarge"><br><br>
+        <div class="titles">Noah Chaim Freedman</div><br><br>
+        <b><a href="freedman.pdf" download><img src="cv_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
+        <b><a href = "https://scholar.google.com/citations?user=EXLKL30AAAAJ&hl=en&oi=ao" target="_blank"><img src="scholar_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
+        <b><a href = "https://github.com/ncfreedman" target="_blank"><img src="github_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
+        <b><a href = "mailto: noah.freedman@pitt.edu"><img src="mail_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
+        <b><a href = "https://twitter.com/ncfreedman" target="_blank"><img src="twitter_icon.jpg" class="rounded" style="height:40px"/></a></b>&nbsp&nbsp
     </div>
-</div>
+
+    <div class="w3-main" style="text-align:justify; margin-left:15%; margin-right:15%;">
+        <br><br>
+        <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+            <div class="txts">
+                I am a MD PhD student in the <a href="https://www.mdphd.pitt.edu/" target=”_blank”>University of Pittsburgh & Carnegie Mellon University MSTP</a>. My scientific interests lie at the intersection of applied mathematics, machine learning, neural dynamics, human cognition and psychiatric disease. I am motivated to develop new methods of analysis for better interpreting neural signals in hopes of elucidating basic computational mechanisms of the brain. A long-term vision of mine is to leverage computational methods for improved diagnosis and design of interventions in the clinic.<br><br>
+            </class>
+        </div>
+    </div>
 </body>
 </html>
