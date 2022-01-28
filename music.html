@@ -20,6 +20,23 @@ $(function(){
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+@media (max-width: 768px) {
+    .txts {font-size: 1.2vw;}
+    .heads {font-size: 1.4vw;}
+    .titles {font-size:2.5vw;}
+    h1, .h1 {font-size: 1.6vw}
+    h3, .h3 {font-size: 1.4vw}
+}
+
+@media (min-width: 769px) {
+    .txts {font-size: 1.2vw;}
+    .heads {font-size: 1.4vw;}
+    .titles {font-size:2.5vw;}
+    h1, .h1 {font-size: 1.6vw}
+    h3, .h3 {font-size: 1.4vw}
+}
+
 </style>
 
 <body class="w3-white w3-content" style="max-width:1600px">
@@ -29,62 +46,62 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="text-align:justify; margin-left:15%; margin-right:15%;">
     <br><br>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-        <font size="5vw">
-        <div style="text-align:center;"><h1><i><u>sketches</u></i></h1></div>
-        
-        <div style="width:50%; max-height: 10px;display:inline-block; text-align:center;">
-            <h3><i><font color=violet>heijeiro</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="heijeiro1.mp3" type="audio/mpeg">
-            </audio>
-        </div><div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=green>bday groove</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="bday_groove.mp3" type="audio/mpeg">
-            </audio>
-        </div><br><br><br><br>
-        <div style="text-align:center;"><h1><i><u>snippets & loops</u></i></h1></div>
-        <div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=skyblue>beach walk</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="beach_walk.mp3" type="audio/mpeg">
-            </audio>
-        </div><div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=purple>latch groove</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="latch_groove.mp3" type="audio/mpeg">
-            </audio>
+        <div class="txts">
+            <div style="text-align:center;"><h1><i><u>sketches</u></i></h1></div>
+            
+            <div style="width:50%; max-height: 10px;display:inline-block; text-align:center;">
+                <h3><i><font color=violet>heijeiro</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="heijeiro1.mp3" type="audio/mpeg">
+                </audio>
+            </div><div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=green>bday groove</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="bday_groove.mp3" type="audio/mpeg">
+                </audio>
+            </div><br><br><br><br>
+            <div style="text-align:center;"><h1><i><u>snippets & loops</u></i></h1></div>
+            <div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=skyblue>beach walk</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="beach_walk.mp3" type="audio/mpeg">
+                </audio>
+            </div><div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=purple>latch groove</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="latch_groove.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <br><br>
+            <div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=red>rumba</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="rumba.mp3" type="audio/mpeg">
+                </audio>
+            </div><div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=orange>wonky bunch crunch</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="wonky_bunch_crunch.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <br><br>
+            <div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=brown>grit groove</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="grit_groove.mp3" type="audio/mpeg">
+                </audio>
+            </div><div style="width:50%; display:inline-block; text-align:center;">
+                <h3><i><font color=purple>noches</font></i></h3>
+                <audio id="aud" controls style="width: 70%;">
+                    <source src="noches.mp3" type="audio/mpeg">
+                </audio>
+            </div>
         </div>
-        <br><br>
-        <div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=red>rumba</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="rumba.mp3" type="audio/mpeg">
-            </audio>
-        </div><div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=orange>wonky bunch crunch</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="wonky_bunch_crunch.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-        <br><br>
-        <div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=brown>grit groove</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="grit_groove.mp3" type="audio/mpeg">
-            </audio>
-        </div><div style="width:50%; display:inline-block; text-align:center;">
-            <h3><i><font color=purple>noches</font></i></h3>
-            <audio id="aud" controls style="width: 70%;">
-                <source src="noches.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-        </font>
         <br><br><br><br>
         
         <div style="text-align:center">
-            <h1><font size="6vw">Some album recommendations</font></h1>
-            <font size="5vw">    
+            <h1><div class="heads">Some album recommendations</class></h1>
+            <div class="txts">    
                 Monk's Dream - Thelonius Sphere Monk<br>
                 Kind of Blue - Miles Davis<br>
                 Birth of the Cool - Miles Davis<br>

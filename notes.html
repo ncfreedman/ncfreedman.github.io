@@ -20,6 +20,19 @@ $(function(){
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+@media (max-width: 768px) {
+    .txts {font-size: 1.2vw;}
+    .heads {font-size: 1.4vw;}
+    .titles {font-size:2.5vw;}
+}
+
+@media (min-width: 769px) {
+    .txts {font-size: 1.2vw;}
+    .heads {font-size: 1.4vw;}
+    .titles {font-size:2.5vw;}
+}
+
 </style>
 
 <body class="w3-white w3-content" style="max-width:1600px">
@@ -29,15 +42,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="text-align:justify; margin-left:15%; margin-right:15%;">
     <br><br><br>
     <div class="w3-container w3-padding-large" style="margin-bottom:32px;text-align:center">
-        <font size="6vw">
+        <div class="heads">
             chaotic medley of projects and notes<br>
-        </font>
-        <font size="5vw">
+        </div>
+        <div class="txts">
             <br>
             <a href="john_stapp.html">John Stapp</a><br>
             <a href="kalman_filter.html"></i>Kalman Filter</a><br>
             <a href="expectation_maximization.html"></i>Expectation Maximization</a><br>
-        </font>
+        </div>
     </div>
 </div>
 </body>
