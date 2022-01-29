@@ -12,7 +12,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     h2, .h2 {font-size: 3.2vw}
     h3, .h3 {font-size: 3vw}
     .txt_icon {height: 3vw}
-    .me_icon {height: 5vw}
+    .me_icon {height: 10vw}
 }
 
 @media (min-width: 769px) {
