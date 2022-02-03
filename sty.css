@@ -1,30 +1,58 @@
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
-@media (max-width: 768px) {
-    .txtnav {font-size: 4.7vw}
-    .headshot {width: 43vw}
-    .txt1 {font-size: 4.5vw}
-    .txt1a {font-size: 3.4vw}
-    .txt2 {font-size: 3vw}
-    .txt3 {font-size: 2.8vw}
-    h1, .h1 {font-size: 3.4vw}
-    h2, .h2 {font-size: 3.2vw}
-    h3, .h3 {font-size: 3vw}
-    .txt_icon {height: 3vw}
-    .me_icon {height: 7vw}
+@media (max-width: 999px) {
+    .container{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;}
+    .me_main {
+        width: 100%;
+        margin-top: 70px;
+        line-height: 2}
+    .sub_head_txt {font-size: 18.3px}
+    .sub_head_icon {height: 20px}
+    .txtnav {font-size: 20px; text-decoration: none;}
+    .txtnav:hover{font-size: 20px; text-decoration: underline;}
+    .headshot {width: 200px}
+    .txt2 {font-size: 30px}
+    .txt3 {font-size: 20px; line-height: 1.5}
+    .txt_icon {height: 27px}
+    h1, .h1 {font-size: 33px}
+    h2, .h2 {font-size: 30px}
+    h3, .h3 {font-size: 23px}
 }
 
-@media (min-width: 769px) {
-    .txtnav {font-size: 3vw}
-    .headshot {width: 22vw}
-    .txt1 {font-size: 2.5vw}
-    .txt1a {font-size: 1.8vw}
-    .txt2 {font-size: 1.4vw}
-    .txt3 {font-size: 1.2vw}
-    h1, .h1 {font-size: 2vw}
-    h2, .h2 {font-size: 1.6vw}
-    h3, .h3 {font-size: 1.4vw}
-    .txt_icon {height: 1.5vw}
-    .me_icon {height: 2.5vw}
+@media (min-width: 1000px) {
+    .container{
+        width: 1000px;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        position: relative;}
+    .me_main {
+        width: 100%;
+        margin-top: 70px;
+        line-height: 2}
+    .spacer {height:6px}
+    .sub_head_txt {font-size: 18.3px}
+    .sub_head_icon {height: 20px}
+    .txtnav {font-size: 20px; text-decoration: none;}
+    .txtnav:hover{font-size: 20px; text-decoration: underline;}
+    .headshot {width: 200px}
+    .txt2 {font-size: 30px}
+    .txt3 {font-size: 20px; line-height: 1.5}
+    .txt_icon {height: 27px}
+    h1, .h1 {font-size: 33px}
+    h2, .h2 {font-size: 30px}
+    h3, .h3 {font-size: 23px}
+}
+
+.left {float: left; width: 201x}
+.right {float: right; width: 720px}
+
+#reset-this-root {
+    all: initial;
 }
