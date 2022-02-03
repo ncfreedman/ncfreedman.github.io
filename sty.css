@@ -12,17 +12,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         width: 100%;
         margin-top: 70px;
         line-height: 2}
+    .left {float: left; width: 201px}
+    .right {float: right; width: 100%}
     .sub_head_txt {font-size: 18.3px}
     .sub_head_icon {height: 20px}
-    .txtnav {font-size: 20px; text-decoration: none;}
-    .txtnav:hover{font-size: 20px; text-decoration: underline;}
+    .txtnav {font-size: 15px; text-decoration: none;}
+    .txtnav:hover{font-size: 15px; text-decoration: underline;}
     .headshot {width: 200px}
-    .txt2 {font-size: 30px}
-    .txt3 {font-size: 20px; line-height: 1.5}
-    .txt_icon {height: 27px}
+    .txt2 {font-size: 21px}
+    .txt3 {font-size: 15px; line-height: 1.5}
+    .txt_icon {height: 20px}
     h1, .h1 {font-size: 33px}
-    h2, .h2 {font-size: 30px}
-    h3, .h3 {font-size: 23px}
+    h2, .h2 {font-size: 23px}
+    h3, .h3 {font-size: 20px}
 }
 
 @media (min-width: 1000px) {
@@ -36,6 +38,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         width: 100%;
         margin-top: 70px;
         line-height: 2}
+    .left {float: left; width: 201px}
+    .right {float: right; width: 720px}
     .spacer {height:6px}
     .sub_head_txt {font-size: 18.3px}
     .sub_head_icon {height: 20px}
@@ -49,9 +53,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     h2, .h2 {font-size: 30px}
     h3, .h3 {font-size: 23px}
 }
-
-.left {float: left; width: 201x}
-.right {float: right; width: 720px}
 
 #reset-this-root {
     all: initial;
