@@ -20,10 +20,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     .txtnav:hover{font-size: 15px; text-decoration: underline;}
     .headshot {width: 200px}
     .txt2 {font-size: 21px}
-    .txt3 {font-size: 15px; line-height: 1.5}
+    .txt3 {font-size: 12px; line-height: 1.5}
     .txt_icon {height: 20px}
     h1, .h1 {font-size: 33px}
-    h2, .h2 {font-size: 23px}
+    h2, .h2 {font-size: 20px}
     h3, .h3 {font-size: 20px}
 }
 
