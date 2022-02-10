@@ -32,11 +32,14 @@
 
 <body class="w3-white w3-content" style="max-width:1600px">
 
-<div class="me_main w3-main" style="text-align:justify">
-    <div class="w3-container">
-        <h1>Expectation Maximization</h1>
-    </div>
-    <div class="w3-container txt3" style="margin-bottom:32px">
+<div class="w3-main" style="text-align:justify; margin-left:15%; margin-right:15%;">
+    <br>
+    <div class="w3-container w3-padding-large txt3" style="margin-bottom:32px; text-align:justify;">
+
+        <div class="w3-container">
+            <h1>Expectation Maximization</h1>
+        </div>
+        <div class="w3-container txt3" style="margin-bottom:32px">
 EM algorithms are extremely useful schemes in unsupervised learning. Let's say we have a set of observations \(\{x_i\}_{i=1}^N\) and we want to fit a model with latent variables \(\textbf{z}\) and parameters \(\theta\). Our log-likelihood function takes the form<br><br>
 
 \[
@@ -85,6 +88,7 @@ log(p(\textbf{x}|\theta))=\mathcal{L}(Q(\textbf{z}),\theta)+\sum_{i=1}^{N}KL(Q_i
 \end{equation*}<br>
 
 This form also has a nice interpretation for the starting point of Jensen's inequality, where the inequality sign is obtained by removing the \(KL\) term which is always \(\geq0\). This also further explains our choice of \(\textbf{Q}\) at each iteration to make tight the lower bound, as that choice minimizes the \(KL\) terms.
+        </div>
     </div>    
 </div>
 </body>
