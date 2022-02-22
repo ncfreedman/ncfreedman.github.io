@@ -10,14 +10,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         position: relative;}
     .me_main {
         width: 100%;
-        margin-top: 30px;
+        margin-top: 0px;
         line-height: 2}
     .left {float: left; width: 201px}
     .right {float: right; width: 100%}
     .sub_head_txt {font-size: 17px}
     .sub_head_icon {height: 20px}
-    .txtnav {font-size: 15px; text-decoration: none;}
-    .txtnav:hover{font-size: 15px; text-decoration: underline;}
+    .txtnav {font-size: 17px; text-decoration: none;}
+    .txtnav:hover{font-size: 17px; text-decoration: underline;}
     .headshot {width: 200px}
     .txt2 {font-size: 19px}
     .txt3 {font-size: 12px; line-height: 1.5}
