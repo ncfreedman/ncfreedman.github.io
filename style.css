@@ -44,7 +44,7 @@ hr {border-color:rgb(104, 104, 104)}
     .me_header_right {line-height:1; text-align:right; float: right; width: 50%}
     .spacer {height:6px}
     .big-spacer {height:60px}
-    .sub_head_txt {text-align:center; font-size: 18.75px; font-weight: 600}
+    .sub_head_txt {text-align:center; font-size: 1.6vw; font-weight: 600}
     .icons {height: 20px; margin-left:.3vw}
     a {font-size: 20px; text-decoration: none; color:rgb(17, 117, 184)}
     a:hover{font-size: 20px; text-decoration: none; color:rgb(153, 17, 184)}
