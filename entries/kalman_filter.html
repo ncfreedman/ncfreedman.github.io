@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Noah Chaim Freedman</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Noah Chaim Freedman's website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Noah Chaim Freedman">
+    <link rel="icon" href="cube.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="sty.css">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){$("#header").load("header.html");});
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        }
+        });
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+
+<body class="w3-white w3-content" style="max-width:1600px">
+
+<div class="w3-main" style="text-align:justify; margin-left:15%; margin-right:15%; margin-bottom:15%">
+    <br>
+    <div class="w3-container txt3">
+        
+        <h1>Kalman Filter</h1>
+
+        This entry will introduce the probabilistic model behind the Kalman Filter, briefly describe methods of fitting model parameters and derive the online procedure for estimating latents from measurements.<hr>
+        
+        The Kalman Filter is a method for decoding latent-factors in real-time and applies to linear dynamical systems with linear readouts. The latent factors \(z\) and observables \(x\) are described by the following model:<br><br>
+
+        \[
+        z_1\sim N(\pi, V)\\
+        z_t|z_{t-1}\sim N(Az_{t-1}, Q)\\
+        x_t|z_t\sim N(Cz_t, R)
+        \]
+        
+        where subscript \(t\) denotes the time index and \(\pi, V, A, Q, C, R\) are model parameters. If we are given a set of observations alone, as is the case in unsupervised learning, we can use an <a href="expectation_maximization.html">Expectation-Maximization algorithm</a> to fit the model. Alternatively, if we have observations and their paired latents, we can use <a href="maximum_likelihood_estimation.html"">Maximum Likelihood Estimation</a> to solve for the parameters explicitly.<br><br>
+        
+        As we will see in what follows, we now can use this fitted model to estimate the value of our latent variables in real time as we make observations. This problem is ubiquitous in science and engineering such as in the field of brain-computer interface technology, where internal variables such as intended movements are decoded from the observed neural activity patterns to drive cursors or robotic arms. Other applications are found in object tracking, economics and navigation to name a few.<br><br>
+        
+        Now let's turn to the technical problem of estimating latents at a given time \(t\),  equivalent to maximizing \(P(z_t|\{x\}_1^t)\) w.r.t. \(z_t\). First, we can obtain a nice expression for \(P(z_t|\{x\}_1^t)\) by applying Bayes' Rule to \(P(z_t|x_t)\) and then conditioning on \(\{x\}_1^{t-1}\) as follows:<br><br>
+        
+        \[
+        P(z_t|x_t,\{x\}_1^{t-1})=\frac{P(x_t|z_t)P(z_t|x_t\{x\}_1^{t-1})}{P(x_t|\{x\}_1^{t-1})}
+        \]<br>
+
+        We next notice that each \(z_t\) and \(x_t\) is Gaussian distributed as specified by our model. Furthermore, we know that joint and conditional distributions of Gaussians are Gaussian, as well as that products of Gaussians are Gaussian. Therefore, \(P(z_t|\{x\}_1^t)\) is Gaussian and our maximization problem is equivalent to computing its mean. Our approach will comprise specifying the full joint distribution \(P(z_t,x_t|\{x\}_1^{t-1})\) and then using results from Gaussian conditioning to derive \(P(z_t|\{x\}_1^{t})\).<br><br>
+
+        First, we define:<br><br>
+
+        \[
+        \mu_t^\tau=E[z_t|\{x\}_1^\tau]\\
+        \Sigma_t^\tau=cov[z_t|\{x\}_1^\tau]
+        \]<br>
+
+        from which we obtain by definition:<br><br>
+
+        \[
+        E[z_t|\{x\}_1^{t-1}]=\mu_t^{t-1}\\
+        cov[z_t|\{x\}_1^{t-1}]=\Sigma_t^{t-1}
+        \]<br>
+
+        We can further expand the right hand side by relating \(z_t\) to \(z_{t-1}\) as follows:<br><br>
+
+        \[z_t=Az_{t-1}+v\:,\quad v\sim N(0,Q)\]
+        \begin{equation*}
+        \begin{aligned}
+        E[z_t]&=AE[z_{t-1}]\\
+        E[z_t|\{x\}_1^{t-1}]&=AE[z_{t-1}|\{x\}_1^{t-1}]\\
+        \mu_t^{t-1}&=A\mu_{t-1}^{t-1}\\\\
+        cov[z_t]&=Acov[z_{t-1}]A^T+Q\\
+        cov[z_t|\{x\}_1^{t-1}]&=Acov[z_{t-1}|\{x\}_1^{t-1}]A^T+Q\\
+        \Sigma_t^{t-1}&=A\Sigma_{t-1}^{t-1}A^T+Q
+        \end{aligned}
+        \end{equation*}<br>
+
+        Therefore, we have fully described \(P(z_t|\{x\}_1^{t-1})\) in terms of \(P(z_{t-1}|\{x\}_1^{t-1})\). This result suggests a recursive algorithm which we will see played out below. Next let's turn to the other mean and partial covariance of our joint distribution for \(P(x_t|\{x\}_1^{1-t})\):<br><br>
+
+        \[x_t=Cz_{t}+w\:,\quad w\sim N(0,R)\]
+        \begin{equation*}
+        \begin{aligned}
+        E[x_t]&=CE[z_t]\\
+        E[x_t|\{x\}_1^{t-1}]&=CE[z_t|\{x\}_1^{t-1}]\\
+        &=C\mu_t^{t-1}\\\\
+        cov[x_t]&=Ccov[z_t]C^T+R\\
+        cov[x_t|\{x\}_1^{t-1}]&=Ccov[z_t|\{x\}_1^{t-1}]C^T+R\\
+        &=C\Sigma_t^{t-1}C^T+R
+        \end{aligned}
+        \end{equation*}<br>
+
+        At this point, we have \(E[x_t|\{x\}_1^{1-t}]\), \(cov[x_t|\{x\}_1^{1-t}]\), \(E[z_t|\{x\}_1^{1-t}]\) and \(cov[z_t|\{x\}_1^{1-t}]\). All that's left to complete the distribution is the cross-covariance \(cov[x_t, z_t|\{x\}_1^{1-t}]\):<br><br>
+
+        \begin{equation*}
+        \begin{aligned}
+        cov[x_t, z_t|\{x\}_1^{1-t}]&=E[x_tz_t^T|\{x\}_t^{t-1}]-E[x_t|\{x\}_1^{t-1}]E[z_t|\{x\}_1^{t-1}]^T\\&=E[Cz_tz_t^T+w_tz_t^T|\{x\}_1^{t-1}]-C\mu_t^{t-1}(\mu_t^{t-1})^T\\&=C\Sigma_t^{t-1}+C\mu_t^{t-1}(\mu_t^{t-1})^T-C\mu_t^{t-1}(\mu_t^{t-1})\\&=C\Sigma_t^{t-1}
+        \end{aligned}
+        \end{equation*}<br>
+
+        Now that we have the full expectation and covariance for \(P(x_t,z_t|\{x\}_1^{t-1})\) we can apply the following result from Gaussian conditioning (see 2006 Bishop 2.3.1):<br><br>
+        
+        
+        \begin{equation*}
+        \begin{aligned}
+        given&: \mu_a, \mu_b, \Sigma_{aa}, \Sigma_{bb}, \Sigma_{ab}\\
+        \mu_{a|b}&=\mu_a+\Sigma_{ab}\Sigma_{bb}^{-1}(b-\mu_b)\\
+        \Sigma_{a|b}&=\Sigma_{aa}-\Sigma_{ab}\Sigma_{bb}^{-1}\Sigma_{ba}\\
+        \end{aligned}
+        \end{equation*}<br>        
+        
+        to obtain \(P(z_t|\{x\}_1^t)\):<br><br>
+
+        \begin{equation*}
+        \begin{aligned}
+        \mu_t^t&=E[z_t|x_t,\{x\}_1^{t-1}]\\
+        &=\mu_t^{t-1}+(C\Sigma_t^{t-1})^T(C\Sigma_t^{t-1}C^T+R)^{-1}(x_t-C\mu_t^{t-1})\\
+        &=\mu_t^{t-1}+K_t(x_t-C\mu_t^{t-1})\\\\
+        \Sigma_t^t&=cov[z_t|x_t,\{x\}_1^{t-1}]\\
+        &=\Sigma_t^{t-1}-(C\Sigma_t^{t-1})^T(C\Sigma_t^{t-1}C^T+R)^{-1}C\Sigma_t^{t-1}\\
+        &=\Sigma_t^{t-1}-K_tC\Sigma_t^{t-1}
+        \end{aligned}
+        \end{equation*}<br>
+
+        Where \(K_t\) is commonly known as the "Kalman Gain". Since we have explicit formulas for \(\mu_t^{t-1}\) and \(\Sigma_t^{t-1}\) in terms of \(\mu_{t-1}^{t-1}\) and \(\Sigma_{t-1}^{t-1}\) respectively, we can finally state the online Kalman Filter as follows:<br><br>
+
+        \begin{equation*}
+        \begin{aligned}
+        initialize:\mu_1^0&=\pi,\;\Sigma_1^0=V\\
+        \mu_t^{t-1}&=A\mu_{t-1}^{t-1}\\
+        \Sigma_t^{t-1}&=A\Sigma_{t-1}^{t-1}A^T+Q\\
+        \mu_t^t&=\mu_t^{t-1}+K_t(x_t-C\mu_t^{t-1})\\
+        \Sigma_t^t&=\Sigma_t^{t-1}-K_tC\Sigma_t^{t-1}\\
+        \end{aligned}
+        \end{equation*}
+
+    </div>
+</div>
+</body>
+</html>
