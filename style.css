@@ -78,22 +78,22 @@ hr {border-color:rgb(104, 104, 104)}
     .me_header_left {line-height:1;
                     text-align:left;
                     float: left;
-                    width: 50%;
-                    position: sticky;
-                    top: 0}
-    .me_header_left a{margin-left: 1vw;}
-    .me_header_left a{font-size: 3vw; text-decoration: none; color:rgb(79, 95, 105)}
-    .me_header_left a:hover{font-size: 1vw; text-decoration: none; color:rgb(0, 0, 0)}
+                    width: 50%;}
+    .me_header_left a{font-size: 3vw;
+        text-decoration: none;
+        color:rgb(79, 95, 105);
+        margin-left: 1vw;}
+    .me_header_left a:hover{font-size: 3vw; text-decoration: none; color:rgb(0, 0, 0)}
     .me_header_right {line-height:1; text-align:right; float: right; width: 50%}
     .spacer {height:6px}
     .big-spacer {height:60px}
     .sub_head_txt {text-align:center; font-size: 2.2vw; font-weight: 600}
     .icons {height: 3.3vw; margin-left: 1vw;}
-    a {font-size: 17px; text-decoration: none; color:rgb(17, 117, 184)}
-    a:hover{font-size: 17px; text-decoration: none; color:rgb(153, 17, 184)}
+    a {font-size: 2vw; text-decoration: none; color:rgb(17, 117, 184)}
+    a:hover{font-size: 2vw; text-decoration: none; color:rgb(153, 17, 184)}
     .headshot {width: 100%; border-radius: 2%}
     .txt2 {font-size: 19px}
-    .txt3 {font-size: 17px;
+    .txt3 {font-size: 2vw;
             line-height: 1.5;
             color:rgb(40, 40, 40);
             text-align:justify}
