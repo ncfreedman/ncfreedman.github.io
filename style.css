@@ -1,4 +1,3 @@
-
 #reset-this-root {
     all: initial;
 }
@@ -6,13 +5,13 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;}
 body {display:flex; flex-direction: column; min-height: 100vh}
 
-hr {border-color:rgb(104, 104, 104)}
+hr {border-color:rgb(104, 104, 104); margin: 10px 0px}
 
 .footer {height: 10px;
         width: 100%;
-        background-color:#f2f3f3;
         color:rgb(79, 95, 105);
-        font-size:10px;}
+        font-size:10px;
+        line-height: 0}
 
 .bottom-spacer {width: 100%; flex-grow:1}
 
@@ -35,16 +34,15 @@ hr {border-color:rgb(104, 104, 104)}
         margin-top: 70px;}
     .me_left {float: left; width: 25%}
     .me_right {float: right; width: 68%}
-    .me_header_left {line-height:1; text-align:left; float: left; width: 50%}
+    .me_header_left {line-height:1; text-align:left; float: left; width: 100%}
     .me_header_left a{font-size: 20px;
                     text-decoration: none;
                     color:rgb(79, 95, 105);
                     margin-left: .3vw;}
     .me_header_left a:hover{color:rgb(0, 0, 0)}
-    .me_header_right {line-height:1; text-align:center; width: 100%}
     .spacer {height:6px}
     .big-spacer {height:60px}
-    .sub_head_txt {text-align:center; font-size: 1.6vw; font-weight: 600}
+    .sub_head_txt {text-align:center; font-size: 1.6vw; font-weight: 600;  margin: 5px 0px}
     .icons {height: 20px; margin-left:.3vw; margin-right:.3vw}
     a {font-size: 20px; text-decoration: none; color:rgb(17, 117, 184)}
     a:hover{font-size: 20px; text-decoration: none; color:rgb(153, 17, 184)}
@@ -84,11 +82,10 @@ hr {border-color:rgb(104, 104, 104)}
         margin-left: 2vw;
         margin-right: 2vw}
     .me_header_left a:hover{color:rgb(0, 0, 0)}
-    .me_header_right {line-height:1; text-align:right; float: right; width: 50%}
     .spacer {height:2vw}
     .big-spacer {height:60px}
     .headshot {width: 50%; border-radius: 2%; display: inline-block}
-    .sub_head_txt {text-align:center; font-size: 4vw; font-weight: 600}
+    .sub_head_txt {text-align:center; font-size: 4vw; font-weight: 600; margin-bottom: 5vw}
     .icons {height: 3.3vw; margin-left: 1vw; margin-left: 1vw;}
     a {font-size: 3vw; text-decoration: none; color:rgb(17, 117, 184)}
     a:hover{color:rgb(153, 17, 184)}

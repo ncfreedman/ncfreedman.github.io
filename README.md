@@ -1,3 +1,3 @@
 # ncfreedman.github.io
 
-page about me
+personal website
